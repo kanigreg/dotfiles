@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 
 	-- Colorschema
 	use "olimorris/onedarkpro.nvim"
+	require('plugins.treesitter').run(use)
 
 	use {
 		'nvim-telescope/telescope.nvim', branch = '0.1.x',
