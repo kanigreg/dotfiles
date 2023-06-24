@@ -17,7 +17,10 @@ for k, v in pairs(options) do
 end
 
 local globals = {
-	mapleader = ' '
+	mapleader = ' ',
+	loaded = 1,
+	loaded_netrw = 1,
+	loaded_netrwPlugin = 1,
 }
 
 for k, v in pairs(globals) do
