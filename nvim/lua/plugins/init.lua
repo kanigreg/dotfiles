@@ -17,6 +17,11 @@ return require('packer').startup(function(use)
 	-- Colorschema
 	use "olimorris/onedarkpro.nvim"
 
+	use {
+		'nvim-telescope/telescope.nvim', branch = '0.1.x',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
   if packer_bootstrap then
     require('packer').sync()
   end

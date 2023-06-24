@@ -17,7 +17,7 @@ for k, v in pairs(options) do
 end
 
 local globals = {
-	mapleder = ' '
+	mapleader = ' '
 }
 
 for k, v in pairs(globals) do
