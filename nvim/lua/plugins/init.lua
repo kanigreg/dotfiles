@@ -4,6 +4,14 @@ return require('packer').startup(function(use)
 	use { 'svban/YankAssassin.vim' }
 	use { 'AndrewRadev/splitjoin.vim' }
 	use 'tpope/vim-repeat'
+	use 'RRethy/vim-illuminate'
+	use {
+		'nvim-zh/auto-save.nvim',
+		config = function()
+			local autosave = require("auto-save")
+			autosave.setup()
+		end
+	}
 
 	-- UI
 	use {
