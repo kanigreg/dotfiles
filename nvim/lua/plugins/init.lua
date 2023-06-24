@@ -28,5 +28,8 @@ return require('packer').startup(function(use)
 		end,
 		requires = 'nvim-lua/plenary.nvim'
 	}
+
+	-- LSP
+	require('plugins.lsp').run(use)
 end)
 
