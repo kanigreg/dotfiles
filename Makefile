@@ -10,3 +10,6 @@ nvim-configure:
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim $(PACKER_PATH)/packer.nvim
 	ln -snf $(PWD)/nvim ~/.config/nvim
 
+tmux-configure:
+	rm -rf ~/.tmux.conf || exit 0
+	ln -sf $(PWD)/.tmux.conf ~/.tmux.conf

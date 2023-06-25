@@ -19,6 +19,7 @@ bind("n", "<leader>sd", builtin.diagnostics, opts)
 
 -- Nvim Tree
 bind('n', '<leader><leader>', ':NvimTreeToggle<CR>', opts)
+bind('n', '<C-n>', ':NvimTreeFindFile<CR>')
 
 -- Core
 bind('v', '"y', '"+y', opts)
