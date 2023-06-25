@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
 	use { 'AndrewRadev/splitjoin.vim' }
 	use 'tpope/vim-repeat'
 	use 'RRethy/vim-illuminate'
+	-- autosave files
 	use {
 		'nvim-zh/auto-save.nvim',
 		config = function()
@@ -12,6 +13,42 @@ return require('packer').startup(function(use)
 			autosave.setup()
 		end
 	}
+	-- automaticaly adjust `shiftwidth` and `extendtab`
+	use 'tpope/vim-sleuth'
+	-- text surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*",
+		config = function()
+			require("nvim-surround").setup({})
+		end
+	})
+	-- blank line indentation
+	use {
+		'lukas-reineke/indent-blankline.nvim',
+		config = function()
+			require('indent_blankline').setup {
+				char = '┊',
+				show_trailing_blankline_indent = false,
+				show_current_context = true,
+			}
+		end
+	}
+	-- show key suggestions
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup {}
+		end
+	}
+	-- better commenting
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup({})
+		end
+	}
+
 
 	-- UI
 	use {
