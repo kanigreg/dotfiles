@@ -139,4 +139,21 @@ return require('packer').startup(function(use)
 
 	-- LSP
 	require('plugins.lsp').run(use)
+
+	-- Debugger
+	use {
+		'mfussenegger/nvim-dap',
+	}
+	-- 		'jayp0521/mason-nvim-dap.nvim',
+	-- 		config = function()
+	-- 			require("dapui").setup()
+	-- 		end
+	-- 	}
+	-- 	use {
+	-- 		'theHamsta/nvim-dap-virtual-text',
+	-- 		config = function()
+	-- 			require("nvim-dap-virtual-text").setup()
+	-- 		end
+	-- 	}
+	-- 	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 end)
