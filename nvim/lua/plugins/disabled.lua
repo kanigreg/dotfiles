@@ -1,3 +1,4 @@
 return {
-  { 'suketa/nvim-dap-ruby', enabled = false },
+  { 'suketa/nvim-dap-ruby',    enabled = false },
+  { 'akinsho/bufferline.nvim', enabled = false },
 }
