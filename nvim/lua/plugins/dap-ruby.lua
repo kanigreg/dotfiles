@@ -6,8 +6,8 @@ return {
     dap.adapters.ruby = function(callback, config)
       callback {
         type = "executable",
-        command = config.rdbgPath,
-        args = { "-n", "-c", "--", "bundle", "exec", 'rspec', config.program, },
+        command = 'bundle',
+        args = { "exec", "rdbg", "-n", "-c", "--", "bundle", "exec", 'rspec', config.program, },
         source_filetype = 'ruby'
       }
     end
@@ -17,8 +17,7 @@ return {
         name = "run current spec file",
         request = "launch",
         localfs = true,
-        program = 'spec/integration/v1/catalog/banquet_menu/products_spec.rb',
-        rdbgPath = 'bin/rdbg',
+        program = '${file}',
       },
     }
   end
