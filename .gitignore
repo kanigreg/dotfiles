@@ -1,3 +1,1 @@
-nvim/plugin/*
-.null*
-nvim/lua/.luarc.json
+inventory.ini

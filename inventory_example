@@ -1,0 +1,4 @@
+[targets]
+localhost ansible_connection=local
+dev ansible_host=[HOST] ansible_user=[USERNAME]
+
