@@ -2,9 +2,21 @@
   hosts: targets
 
   tasks:
-    - name: install git
+    - name: Install git
       become: true
       ansible.builtin.apt:
         name: git
         state: present
-        update-cache: yes
+        update-cache: true
+
+    - name: Add unstable neovim repo
+      become: true
+      apt_repository:
+        repo: ppa:neovim-ppa/unstable
+        state: present
+
+    - name: Install neovim=latest
+      become: true
+      ansible.builtin.apt:
+        name: neovim
+        state: latest
