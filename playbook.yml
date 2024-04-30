@@ -1,5 +1,6 @@
 - name: Install necessery packages
   hosts: targets
+  tags: packages
 
   tasks:
     - name: Install git
@@ -20,3 +21,15 @@
       ansible.builtin.apt:
         name: neovim
         state: latest
+
+- name: Fetch and install dotfiles
+  hosts: targets
+  tags: dotfiles
+
+  tasks:
+    - name: Fetch dotfile repo
+      ansible.builtin.git:
+        repo: https://github.com/kanigreg/dotfiles.git
+        dest: ~/dotfiles/
+        single_branch: yes
+        version: cloud
