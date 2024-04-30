@@ -1,0 +1,10 @@
+- name: Install necessery packages
+  hosts: targets
+
+  tasks:
+    - name: install git
+      become: true
+      ansible.builtin.apt:
+        name: git
+        state: present
+        update-cache: yes
