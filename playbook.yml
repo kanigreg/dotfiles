@@ -37,7 +37,7 @@
   tags: dotfiles
 
   tasks:
-    - name: Fetch dotfile repo
+    - name: Clone dotfile repo
       ansible.builtin.git:
         repo: https://github.com/kanigreg/dotfiles.git
         dest: ~/dotfiles/
@@ -46,11 +46,23 @@
         force: yes
       notify:
         - Make link to neovim sources
+        - Make link to tmux config
+
+    - name: Clone tmux plugin manager
+      ansible.builtin.git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
 
   handlers:
+    - name: Make link to tmux config
+      ansible.builtin.shell:
+        cmd: make configure_tmux
+        executable: /bin/bash
+        chdir: ~/dotfiles/
+
     - name: Make link to neovim sources
       ansible.builtin.shell:
-        cmd: make install
+        cmd: make configure_neovim
         executable: /bin/bash
         chdir: ~/dotfiles/
 

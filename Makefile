@@ -7,7 +7,10 @@ ping:
 apply:
 	ansible-playbook playbook.yml -i inventory.ini
 
-install:
+configure_neovim:
 	mkdir -p ~/.config
 	ln -snf $(PWD)/nvim ~/.config/nvim
+
+configure_tmux:
+	ln -snf $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 
