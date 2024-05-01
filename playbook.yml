@@ -32,6 +32,11 @@
       ansible.legacy.apt:
         name: tmux
 
+    - name: Install gcc compiler
+      become: true
+      ansible.legacy.apt:
+        name: gcc
+
 - name: Fetch and install dotfiles
   hosts: targets
   tags: dotfiles
