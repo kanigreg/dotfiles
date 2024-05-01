@@ -8,7 +8,12 @@
       ansible.builtin.apt:
         name: git
         state: present
-        update-cache: true
+
+    - name: Install make
+      become: true
+      ansible.builtin.apt:
+        name: make
+        state: present
 
     - name: Add unstable neovim repo
       become: true
