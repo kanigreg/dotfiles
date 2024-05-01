@@ -4,6 +4,10 @@ setup:
 ping:
 	ansible all -i inventory.ini -m ping
 
-install:
+apply:
 	ansible-playbook playbook.yml -i inventory.ini
+
+install:
+	mkdir -p ~/config
+	ln -snf $(pwd)/nvim ~/.config/nvim/
 

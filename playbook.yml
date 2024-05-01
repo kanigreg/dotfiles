@@ -33,3 +33,13 @@
         dest: ~/dotfiles/
         single_branch: yes
         version: cloud
+      notify:
+        - Make link to neovim sources
+
+  handlers:
+    - name: Make link to neovim sources
+      ansible.builtin.shell:
+        cmd: make install
+        executable: /bin/bash
+        chdir: ~/dotfiles/
+
