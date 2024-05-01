@@ -27,6 +27,11 @@
         name: neovim
         state: latest
 
+    - name: Install tmux
+      become: true
+      ansible.legacy.apt:
+        name: tmux
+
 - name: Fetch and install dotfiles
   hosts: targets
   tags: dotfiles
