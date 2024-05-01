@@ -8,6 +8,6 @@ apply:
 	ansible-playbook playbook.yml -i inventory.ini
 
 install:
-	mkdir -p ~/config
-	ln -snf $(pwd)/nvim ~/.config/nvim/
+	mkdir -p ~/.config
+	ln -snf ./nvim ~/.config/nvim
 

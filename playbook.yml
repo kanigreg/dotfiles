@@ -38,6 +38,7 @@
         dest: ~/dotfiles/
         single_branch: yes
         version: cloud
+        force: yes
       notify:
         - Make link to neovim sources
 
