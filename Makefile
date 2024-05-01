@@ -9,5 +9,5 @@ apply:
 
 install:
 	mkdir -p ~/.config
-	ln -snf ./nvim ~/.config/nvim
+	ln -snf $(PWD)/nvim ~/.config/nvim
 
