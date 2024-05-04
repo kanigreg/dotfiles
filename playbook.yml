@@ -37,6 +37,16 @@
       ansible.legacy.apt:
         name: gcc
 
+    - name: Install ripgrep
+      become: true
+      ansible.legacy.apt:
+        name: ripgrep
+
+    - name: Install fd-find
+      become: true
+      ansible.legacy.apt:
+        name: fd-find
+
 - name: Fetch and install dotfiles
   hosts: targets
   tags: dotfiles
