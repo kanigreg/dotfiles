@@ -1,5 +1,3 @@
-require("config.options")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- stylua: ignore
@@ -8,6 +6,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+require("config.options")
 require("lazy").setup("plugins")
+require("config.keymaps")
 
 vim.cmd.colorscheme "catppuccin"
