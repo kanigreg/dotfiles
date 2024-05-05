@@ -24,6 +24,8 @@ opt.relativenumber = true -- Relative line numbers
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.autowrite = true -- Enable auto write
 
+opt.cursorline = true -- Enable highlighting of the current line
+
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2 -- Size of an indent
 opt.smartindent = true -- Insert indents automatically
