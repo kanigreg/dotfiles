@@ -5,7 +5,7 @@
   tasks:
     - name: Clone dotfile repo
       ansible.builtin.git:
-        repo: https://github.com/kanigreg/dotfiles.git
+        repo: git@github.com:kanigreg/dotfiles.git
         dest: ~/dotfiles/
         single_branch: yes
         version: cloud
@@ -39,6 +39,20 @@
       ansible.builtin.git:
         repo: https://github.com/junegunn/fzf-git.sh
         dest: ~/.zsh/fzf-git
+
+    - name: Make link to gitconfig
+      ansible.builtin.file:
+        src: ~/dotfiles/git/.gitconfig
+        dest: ~/.gitconfig
+        state: link
+        force: true
+
+    - name: Make link to gitignore
+      ansible.builtin.file:
+        src: ~/dotfiles/git/.gitignore
+        dest: ~/.gitignore
+        state: link
+        force: true
 
   handlers:
     - name: Make link to tmux config
