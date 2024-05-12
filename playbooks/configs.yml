@@ -13,11 +13,17 @@
       notify:
         - Make link to neovim sources
         - Make link to tmux config
+        - Make link to zshrc
 
     - name: Clone tmux plugin manager
       ansible.builtin.git:
         repo: https://github.com/tmux-plugins/tpm
         dest: ~/.tmux/plugins/tpm
+
+    - name: Clone zsh theme
+      ansible.builtin.git:
+        repo: https://github.com/romkatv/powerlevel10k.git
+        dest: ~/.zsh/powerlevel10k
 
   handlers:
     - name: Make link to tmux config
@@ -31,4 +37,9 @@
         cmd: make configure_neovim
         executable: /bin/bash
         chdir: ~/dotfiles/
-
+    
+    - name: Make link to zshrc
+      ansible.builtin.file:
+        src: ~/dotfiles/zsh/.zshrc
+        dest: ~/.zshrc
+        state: link
