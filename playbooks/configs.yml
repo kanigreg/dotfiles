@@ -35,6 +35,11 @@
         repo: https://github.com/zsh-users/zsh-autosuggestions
         dest: ~/.zsh/autosuggestion
 
+    - name: Clone fzf-git script
+      ansible.builtin.git:
+        repo: https://github.com/junegunn/fzf-git.sh
+        dest: ~/.zsh/fzf-git
+
   handlers:
     - name: Make link to tmux config
       ansible.builtin.file:
