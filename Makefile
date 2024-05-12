@@ -4,8 +4,13 @@ setup:
 ping:
 	ansible all -i inventory.ini -m ping
 
-apply:
-	ansible-playbook playbook.yml -i inventory.ini
+run: packages configs
+
+packages:
+	ansible-playbook playbooks/packages.yml -i inventory.ini
+
+configs:
+	ansible-playbook playbooks/configs.yml -i inventory.ini
 
 configure_neovim:
 	mkdir -p ~/.config
