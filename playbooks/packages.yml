@@ -27,9 +27,14 @@
           - fd-find
           - zsh
           - fzf
-          - bat
 
-    - name: Download and install git-delta archive (from dep pkg)
+    - name: Download and install bat (from dep pkg)
+      become: true
+      ansible.builtin.apt:
+        deb: https://github.com/sharkdp/bat/releases/download/v0.24.0/bat_0.24.0_amd64.deb
+
+    - name: Download and install git-delta (from dep pkg)
+      become: true
       ansible.builtin.apt:
         deb: https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb
 
