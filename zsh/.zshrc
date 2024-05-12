@@ -6,7 +6,9 @@ source ~/.zsh/autosuggestion/zsh-autosuggestions.zsh
 
 # ---=== ZSH History ===---
 
-export HISTFILE=$HOME/.zsh/history
+HISTFILE=$HOME/.zhistory
+SAVEHIST=10000
+HISTSIZE=999
 setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -45,6 +47,7 @@ else
   }
 fi
 
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 
 # ---=== BAT ===---
 
