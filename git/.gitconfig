@@ -1,3 +1,6 @@
+[include]
+  path = ~/.config/delta/themes/catppuccin/catppuccin.gitconfig
+
 [user]
 	email = kanigreg@gmail.com
 	name = kanigreg
@@ -29,6 +32,8 @@
 [delta]
   navigate = true
   side-by-side = true
+  features = catppuccin-mocha
+  line-numbers = true
 
 [merge]
   conflictstyle = diff3

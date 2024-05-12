@@ -54,6 +54,11 @@
         state: link
         force: true
 
+    - name: Clone theme for delta
+      ansible.builtin.git:
+        repo: https://github.com/catppuccin/delta
+        dest: ~/.config/delta/themes/catppuccin
+
   handlers:
     - name: Make link to tmux config
       ansible.builtin.file:
