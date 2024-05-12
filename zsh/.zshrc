@@ -1,6 +1,6 @@
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.zsh/syntax_highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/autosuggestion/zsh-autosuggestions.zsh
 
 # History setup
 HISTFILE=$HOME/.zsh/history

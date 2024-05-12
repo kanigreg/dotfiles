@@ -13,7 +13,7 @@
       notify:
         - Make link to neovim sources
         - Make link to tmux config
-        - Make link to zshrc
+        - Copy zshrc file
 
     - name: Clone tmux plugin manager
       ansible.builtin.git:
@@ -37,19 +37,22 @@
 
   handlers:
     - name: Make link to tmux config
-      ansible.builtin.shell:
-        cmd: make configure_tmux
-        executable: /bin/bash
-        chdir: ~/dotfiles/
+      ansible.builtin.file:
+        src: ~/dotfiles/tmux/.tmux.conf
+        dest: ~/.tmux.conf
+        state: link
+        force: true
 
     - name: Make link to neovim sources
-      ansible.builtin.shell:
-        cmd: make configure_neovim
-        executable: /bin/bash
-        chdir: ~/dotfiles/
-    
-    - name: Make link to zshrc
       ansible.builtin.file:
+        src: ~/dotfiles/nvim/
+        dest: ~/.config/nvim
+        state: link
+        force: true
+
+    - name: Copy zshrc file
+      ansible.builtin.copy:
         src: ~/dotfiles/zsh/.zshrc
         dest: ~/.zshrc
-        state: link
+        remote_src: true
+        force: true
