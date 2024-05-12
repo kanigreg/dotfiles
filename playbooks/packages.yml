@@ -36,9 +36,16 @@
       become: true
       ansible.builtin.apt:
         deb: https://github.com/sharkdp/bat/releases/download/v0.24.0/bat_0.24.0_amd64.deb
+      notify:
+        - Donwload bat theme
 
     - name: Download and install git-delta (from dep pkg)
       become: true
       ansible.builtin.apt:
         deb: https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb
 
+  handlers:
+    - name: Download bat theme
+      ansible.builtin.get_url:
+        url: https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+        dest: ~/.config/bat/themes
