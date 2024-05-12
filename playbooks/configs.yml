@@ -54,6 +54,13 @@
         state: link
         force: true
 
+    - name: Make link to lazygit config
+      ansible.builtin.file:
+        src: ~/dotfiles/git/lazygit.yml
+        dest: ~/.config/lazygit/config.yml
+        state: link
+        force: true
+
     - name: Clone theme for delta
       ansible.builtin.git:
         repo: https://github.com/catppuccin/delta
