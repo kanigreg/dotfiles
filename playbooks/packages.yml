@@ -3,18 +3,6 @@
   tags: packages
 
   tasks:
-    - name: Install git
-      become: true
-      ansible.builtin.apt:
-        name: git
-        state: present
-
-    - name: Install make
-      become: true
-      ansible.builtin.apt:
-        name: make
-        state: present
-
     - name: Add unstable neovim repo
       become: true
       apt_repository:
@@ -27,27 +15,21 @@
         name: neovim
         state: latest
 
-    - name: Install tmux
+    - name: Install necessery packages
       become: true
       ansible.builtin.apt:
-        name: tmux
+        pkg:
+          - make
+          - git
+          - tmux
+          - gcc
+          - ripgrep
+          - fd-find
+          - zsh
+          - fzf
+          - bat
 
-    - name: Install gcc compiler
-      become: true
+    - name: Download and install git-delta archive (from dep pkg)
       ansible.builtin.apt:
-        name: gcc
+        deb: https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb
 
-    - name: Install ripgrep
-      become: true
-      ansible.builtin.apt:
-        name: ripgrep
-
-    - name: Install fd-find
-      become: true
-      ansible.builtin.apt:
-        name: fd-find
-
-    - name: Install zsh
-      become: true
-      ansible.builtin.apt:
-        name: zsh
