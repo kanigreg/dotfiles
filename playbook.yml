@@ -29,23 +29,28 @@
 
     - name: Install tmux
       become: true
-      ansible.legacy.apt:
+      ansible.builtin.apt:
         name: tmux
 
     - name: Install gcc compiler
       become: true
-      ansible.legacy.apt:
+      ansible.builtin.apt:
         name: gcc
 
     - name: Install ripgrep
       become: true
-      ansible.legacy.apt:
+      ansible.builtin.apt:
         name: ripgrep
 
     - name: Install fd-find
       become: true
-      ansible.legacy.apt:
+      ansible.builtin.apt:
         name: fd-find
+
+    - name: Install zsh
+      become: true
+      ansible.builtin.apt:
+        name: zsh
 
 - name: Fetch and install dotfiles
   hosts: targets
