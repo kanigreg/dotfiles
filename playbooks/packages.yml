@@ -26,7 +26,11 @@
           - ripgrep
           - fd-find
           - zsh
-          - fzf
+
+    - name: Download and install bat (from dep pkg)
+      become: true
+      ansible.builtin.apt:
+        deb: https://launchpad.net/ubuntu/+archive/primary/+files/fzf_0.46.1-1_amd64.deb
 
     - name: Download and install bat (from dep pkg)
       become: true
