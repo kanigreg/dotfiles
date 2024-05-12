@@ -44,8 +44,22 @@
       ansible.builtin.apt:
         deb: https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb
 
+    - name: Download and unarchive lazygit
+      ansible.builtin.unarchive:
+        src: https://github.com/jesseduffield/lazygit/releases/download/v0.41.0/lazygit_0.41.0_Linux_x86_64.tar.gz
+        dest: /tmp
+        remote_src: true
+      notify:
+        Install lazygit
+
   handlers:
     - name: Download bat theme
       ansible.builtin.get_url:
         url: https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
         dest: ~/.config/bat/themes
+
+    - name: Install lazygit
+      become: true
+      ansible.builtin.shell:
+        cmd: install lazygit /usr/local/bin
+        chdir: /tmp
