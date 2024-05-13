@@ -49,9 +49,12 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Telescope
+local telescope = require('telescope')
 local builtin = require('telescope.builtin')
 map('n', '<leader>sf', builtin.find_files, { desc = 'Search files' })
 map('n', '<leader>sg', builtin.live_grep, { desc = 'Search global' })
 map('n', '<leader>sb', builtin.buffers, { desc = 'Search buffers' })
 map('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
+map('n', '<leader>sr', telescope.extensions.git_worktree.git_worktrees, { desc = 'Git Worktree list' })
+map('n', '<leader>sR', telescope.extensions.git_worktree.create_git_worktree, { desc = 'Create Git Worktree' })
 
