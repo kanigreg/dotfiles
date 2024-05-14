@@ -10,7 +10,7 @@ return {
       filter_rules = {
 	bo = {
 	  filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
-	  buftype = { 'terminal', 'quickfix', 'help' }
+	  buftype = { 'terminal', 'quickfix' }
 	}
       }
     }
