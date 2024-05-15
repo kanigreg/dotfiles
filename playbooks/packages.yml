@@ -27,6 +27,7 @@
           - fd-find
           - zsh
           - fswatch
+          - unzip
 
     - name: Download and install fzf (from dep pkg)
       become: true
