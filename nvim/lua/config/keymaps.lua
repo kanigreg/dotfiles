@@ -63,3 +63,8 @@ map('n', '<leader>gC', custom.git_bcommits_delta, { desc = 'File relative commit
 map('n', '<leader>sr', telescope.extensions.git_worktree.git_worktrees, { desc = 'Git Worktree list' })
 map('n', '<leader>sR', telescope.extensions.git_worktree.create_git_worktree, { desc = 'Create Git Worktree' })
 
+map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
+map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
+
+map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
+map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })

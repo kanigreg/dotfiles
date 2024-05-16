@@ -1,14 +1,16 @@
 return {
   'nvim-telescope/telescope.nvim' , branch = '0.1.x',
-  dependencies = { 
+  dependencies = {
     'nvim-lua/plenary.nvim',
-    { 
+    {
       'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make' 
+      build = 'make'
     }
   },
   keys = {
     { "<leader>sb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
+    { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+    { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
   },
   opts = function()
     local actions = require('telescope.actions')

@@ -11,11 +11,11 @@ return {
       },
       sections = {
 	lualine_b = { 'branch' },
-	lualine_c = { 
+	lualine_c = {
 	  { 'diagnostics', symbols = { error = " ", warn  = " ", hint  = " ", info  = " ", }, },
 	  { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 0 } },
 	  { 'filename', path = 1, padding = { left = 0, right = 1 } },
-	  { 
+	  {
 	    'diff',
 	    symbols = { added = " ", modified = " ", removed = " ", },
 	    source = function()
@@ -30,12 +30,10 @@ return {
 	    end,}
 	},
 	lualine_x = {
-          -- stylua: ignore
           {
             function() return require("noice").api.status.command.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
           },
-	  -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
