@@ -42,7 +42,7 @@ return {
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup {}
 
-      vim.diagnostic.config(opts.diagnostics)
+      vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
       return opts
     end,
