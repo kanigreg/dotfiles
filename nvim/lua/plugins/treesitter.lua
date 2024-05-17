@@ -7,6 +7,9 @@ return {
     { "<bs>", desc = "Decrement Selection", mode = "x" },
   },
   opts = {
+    endwise = {
+      enable = true,
+    },
     ensure_installed = {
       "lua",
       "luadoc",
@@ -73,8 +76,7 @@ return {
       enabled = true,
       opts = { mode = "cursor", max_lines = 3 },
     },
-    {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    { "RRethy/nvim-treesitter-endwise" },
   },
 }
