@@ -4,9 +4,9 @@ return {
   opts = {
     modes = {
       char = {
-	enabled = false
-      }
-    }
+        enabled = false,
+      },
+    },
   },
   -- stylua: ignore
   keys = {

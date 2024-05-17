@@ -15,7 +15,7 @@ return {
       ["<leader>g"] = { name = "+git" },
       ["<leader>gh"] = { name = "+hunks" },
       ["<leader>s"] = { name = "+search" },
-      ["<leader>sn"] = { name = "+nocie"},
+      ["<leader>sn"] = { name = "+nocie" },
       ["<leader>x"] = { name = "+diagnostics/quickfix" },
     },
   },

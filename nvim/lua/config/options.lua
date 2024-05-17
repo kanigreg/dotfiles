@@ -13,7 +13,7 @@ end
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
 opt.spelllang = { "en", "ru" }
-opt.formatoptions = 'tcqjronl'
+opt.formatoptions = "tcqjronl"
 
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
@@ -33,7 +33,7 @@ opt.breakindent = false
 
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
-opt.mouse = 'a'
+opt.mouse = "a"
 opt.showmode = false
 opt.undofile = true
 opt.undolevels = 10000
@@ -70,4 +70,3 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
-

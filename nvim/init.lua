@@ -11,4 +11,4 @@ require("lazy").setup("plugins")
 require("config.keymaps")
 require("config.autocmds")
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("catppuccin")

@@ -1,6 +1,6 @@
 local map = function(mode, lhs, rhs, opts)
   opts = opts or {}
-  vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true, desc = opts.desc})
+  vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true, desc = opts.desc })
 end
 
 -- Move to window using the <ctrl> hjkl keys
@@ -15,7 +15,7 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
--- Move Lines 
+-- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
@@ -49,22 +49,31 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Telescope
-local telescope = require('telescope')
-local builtin = require('telescope.builtin')
-local custom = require('utils.telescope')
-map('n', '<leader>sf', builtin.find_files, { desc = 'Search files' })
-map('n', '<leader>sg', builtin.live_grep, { desc = 'Search global' })
-map('n', '<leader>sb', builtin.buffers, { desc = 'Search buffers' })
-map('n', '<leader>sh', builtin.help_tags, { desc = 'Search help tags' })
-map('n', '<leader>gb', builtin.git_branches, { desc = 'Branches' })
-map('n', '<leader>gs', custom.git_status_delta, { desc = 'Status' })
-map('n', '<leader>gc', custom.git_commits_delta, { desc = 'Commit list' })
-map('n', '<leader>gC', custom.git_bcommits_delta, { desc = 'File relative commits' })
-map('n', '<leader>sr', telescope.extensions.git_worktree.git_worktrees, { desc = 'Git Worktree list' })
-map('n', '<leader>sR', telescope.extensions.git_worktree.create_git_worktree, { desc = 'Create Git Worktree' })
+local builtin = require("telescope.builtin")
+local custom = require("utils.telescope")
+local telescope = require("telescope")
+map("n", "<leader>sf", builtin.find_files, { desc = "Search files" })
+map("n", "<leader>sg", builtin.live_grep, { desc = "Search global" })
+map("n", "<leader>sb", builtin.buffers, { desc = "Search buffers" })
+map("n", "<leader>sh", builtin.help_tags, { desc = "Search help tags" })
+map("n", "<leader>gb", builtin.git_branches, { desc = "Branches" })
+map("n", "<leader>gs", custom.git_status_delta, { desc = "Status" })
+map("n", "<leader>gc", custom.git_commits_delta, { desc = "Commit list" })
+map("n", "<leader>gC", custom.git_bcommits_delta, { desc = "File relative commits" })
+map("n", "<leader>sr", telescope.extensions.git_worktree.git_worktrees, { desc = "Git Worktree list" })
+map("n", "<leader>sR", telescope.extensions.git_worktree.create_git_worktree, { desc = "Create Git Worktree" })
 
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
 map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 
+-- Quickfix navigation
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
+
+map("n", "<leader>f", function()
+  require("conform").format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 3000,
+  })
+end, { desc = "Format" })

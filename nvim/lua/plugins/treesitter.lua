@@ -1,4 +1,4 @@
-return { 
+return {
   "nvim-treesitter/nvim-treesitter",
   event = { "VeryLazy" },
   cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
@@ -8,21 +8,21 @@ return {
   },
   opts = {
     ensure_installed = {
-      'lua', 
-      'luadoc', 
-      'vim', 
-      'vimdoc', 
-      'markdown', 
-      'markdown_inline', 
-      'diff', 
-      'query',
-      'json',
-      'yaml',
-      'make',
-      'ruby',
-      'racket',
-      'bash',
-      'regex'
+      "lua",
+      "luadoc",
+      "vim",
+      "vimdoc",
+      "markdown",
+      "markdown_inline",
+      "diff",
+      "query",
+      "json",
+      "yaml",
+      "make",
+      "ruby",
+      "racket",
+      "bash",
+      "regex",
     },
     incremental_selection = {
       enable = true,
@@ -44,7 +44,7 @@ return {
     },
   },
   config = function(_, opts)
-    local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+    local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
     vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
     vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
@@ -74,7 +74,7 @@ return {
       opts = { mode = "cursor", max_lines = 3 },
     },
     {
-      "nvim-treesitter/nvim-treesitter-textobjects"
-    }
-  }
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+  },
 }
