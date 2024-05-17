@@ -54,6 +54,12 @@
       notify:
         Install lazygit
 
+    - name: Install asdf (language package manager)
+      ansible.builtin.git:
+        repo: https://github.com/asdf-vm/asdf.git
+        dest: ~/.asdf
+        version: v0.14.0
+
   handlers:
     - name: Download bat theme
       ansible.builtin.get_url:
