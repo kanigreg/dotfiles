@@ -1,4 +1,4 @@
-- name: Install required packages
+- name: Ruby
   hosts: targets
   tags: ruby
 
@@ -47,3 +47,47 @@
           - global
           - ruby
           - latest
+
+- name: Docker
+  hosts: targets
+  tags: docker
+
+  tasks:
+    - name: Check if docker is installed
+      command: docker --version
+      register: docker_present
+      ignore_errors: true
+
+    - name: Download installation script
+      when: docker_present.failed
+      ansible.builtin.get_url: 
+        url: https://get.docker.com
+        dest: /tmp/get-docker.sh
+        mode: "0755"
+
+    - name: Install docker
+      when: docker_present.failed
+      become: true
+      ansible.builtin.command: /tmp/get-docker.sh
+      notify:
+        - Ensure group "docker" exists
+        - Append to docker group
+
+
+    - name: Append to docker group
+      become: true
+      ansible.builtin.user:
+        name: "{{ ansible_env.USER }}"
+        append: true
+        groups: 
+          - docker
+
+  handlers:
+    - name: Ensure group "docker" exists
+      ansible.builtin.group:
+        name: docker
+        state: present
+
+
+
+
