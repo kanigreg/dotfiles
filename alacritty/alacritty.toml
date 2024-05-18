@@ -1,15 +1,15 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
 shell = "/usr/bin/zsh"
 
 [window]
 decorations = "None"
 startup_mode = "Fullscreen"
 
-opacity = 0.8
+opacity = 0.9
 blur = true
 
 [font]
-normal.family = 'DejaVuSansM Nerd Font Mono'
-size =  14
-
-[env]
-TERM = 'xterm-256color'
+normal.family = 'Iosevka Nerd Font'
