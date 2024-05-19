@@ -1,4 +1,5 @@
 return {
+  { '0x00-ketsu/autosave.nvim', },
   { "slim-template/vim-slim" },
   { 'tpope/vim-rails' },
   {

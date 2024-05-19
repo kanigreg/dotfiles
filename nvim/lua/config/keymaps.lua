@@ -5,3 +5,4 @@
 local map = vim.keymap.set
 
 map('n', 'ga', '<cmd>A<cr>', { silent = true, desc = 'Rails alternate' })
+map('n', '<leader>y', '"+y', { silent = true, desc = 'Yand global' })
