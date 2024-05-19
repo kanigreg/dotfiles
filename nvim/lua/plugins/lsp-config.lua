@@ -49,6 +49,9 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
+      lspconfig.solargraph.setup({
+        capabilities = capabilities,
+      })
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 

@@ -70,8 +70,9 @@ map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
-map("n", "<leader>f", function()
+map({ "n", "v" }, "<leader>f", function()
   require("conform").format({
+    bufnr = vim.api.nvim_get_current_buf(),
     lsp_fallback = true,
     async = false,
     timeout_ms = 3000,
