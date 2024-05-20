@@ -20,12 +20,14 @@ return {
       "diff",
       "query",
       "json",
+      "jsonc",
       "yaml",
       "make",
       "ruby",
       "racket",
       "bash",
       "regex",
+      "toml"
     },
     incremental_selection = {
       enable = true,
