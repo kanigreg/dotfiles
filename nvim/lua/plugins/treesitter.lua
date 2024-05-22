@@ -27,7 +27,8 @@ return {
       "racket",
       "bash",
       "regex",
-      "toml"
+      "toml",
+      "xml",
     },
     incremental_selection = {
       enable = true,

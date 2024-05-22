@@ -38,3 +38,9 @@ config/projections.json
 .yardoc
 .index.yml
 .solargraph.yml
+
+# Zsh specific files
+.zshrc
+.p10k.zsh
+.zsh/
+.cache/
