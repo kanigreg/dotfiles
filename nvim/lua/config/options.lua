@@ -12,6 +12,7 @@ end
 
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
+opt.spell = true
 opt.spelllang = { "en", "ru" }
 opt.formatoptions = "tcqjronl"
 
@@ -40,7 +41,7 @@ opt.undolevels = 10000
 
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
-opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+opt.signcolumn = "yes" -- Always show the sign column, otherwise it would shift the text each time
 
 opt.ignorecase = true
 opt.smartcase = true -- Don't ignore case with capitals

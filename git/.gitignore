@@ -44,3 +44,6 @@ config/projections.json
 .p10k.zsh
 .zsh/
 .cache/
+
+# Spell checker config
+typos.toml
