@@ -6,10 +6,8 @@ shell = "/usr/bin/zsh"
 
 [window]
 decorations = "None"
-startup_mode = "Fullscreen"
-
-opacity = 0.9
-blur = true
+startup_mode = "Maximized"
+padding = { x = 5 }
 
 [font]
 normal.family = 'Iosevka Nerd Font'

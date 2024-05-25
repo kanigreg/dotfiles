@@ -48,3 +48,8 @@ config/projections.json
 # Spell checker config
 typos.toml
 spell/
+
+# Custom project files
+Dockerfile.patched
+docker-compose.patched.yml
+Makefile.patched
