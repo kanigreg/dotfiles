@@ -47,3 +47,4 @@ config/projections.json
 
 # Spell checker config
 typos.toml
+spell/

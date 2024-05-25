@@ -7,6 +7,8 @@ return {
     { "<bs>", desc = "Decrement Selection", mode = "x" },
   },
   opts = {
+    highlight = { enable = true },
+    indent = { enable = true },
     endwise = {
       enable = true,
     },
@@ -29,6 +31,9 @@ return {
       "regex",
       "toml",
       "xml",
+      "comment",
+      "dockerfile",
+      "sql",
     },
     incremental_selection = {
       enable = true,
@@ -48,6 +53,7 @@ return {
         goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
       },
     },
+    additional_vim_regex_highlighting = false,
   },
   config = function(_, opts)
     local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
@@ -60,17 +66,6 @@ return {
     vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
     vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
 
-    if type(opts.ensure_installed) == "table" then
-      ---@type table<string, boolean>
-      local added = {}
-      opts.ensure_installed = vim.tbl_filter(function(lang)
-        if added[lang] then
-          return false
-        end
-        added[lang] = true
-        return true
-      end, opts.ensure_installed)
-    end
     require("nvim-treesitter.configs").setup(opts)
   end,
   dependencies = {
@@ -81,5 +76,7 @@ return {
     },
     { "nvim-treesitter/nvim-treesitter-textobjects" },
     { "RRethy/nvim-treesitter-endwise" },
+    { "nvim-treesitter/playground" },
+    { "windwp/nvim-ts-autotag" },
   },
 }
