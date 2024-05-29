@@ -1,6 +1,7 @@
 return {
   "lewis6991/gitsigns.nvim",
   opts = {
+    trouble = true,
     signs = {
       add = { text = "▎" },
       change = { text = "▎" },
@@ -17,8 +18,13 @@ return {
       end
 
       -- Navigation
-      map("n", "]h", gs.next_hunk, "Next Hunk")
-      map("n", "[h", gs.prev_hunk, "Prev Hunk")
+      map("n", "]h", function()
+        gs.nav_hunk("next", { navigation_message = false, preview = true })
+      end, "Next Hunk")
+      map("n", "[h", function()
+        gs.nav_hunk("prev", { navigation_message = false, preview = true })
+      end, "Prev Hunk")
+      map("n", "<leader>ghl", gs.setloclist, "Set Hunks to loclist")
 
       -- Stage, unstage
       map("n", "<leader>ghs", gs.stage_hunk, "Stage hunk")
@@ -38,11 +44,11 @@ return {
       end, "Diff This ~")
 
       -- Blame
-      map("n", "<leader>ghb", function()
-        gs.blame_line({ full = true })
-      end, "Blame Line")
+      --
+      map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
 
       -- Selection
+      --
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
     end,
   },

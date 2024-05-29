@@ -1,5 +1,4 @@
 local builtin = require("telescope.builtin")
-local conf = require("telescope.config")
 local previewers = require("telescope.previewers")
 
 local M = {}

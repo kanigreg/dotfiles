@@ -16,13 +16,6 @@ return {
       end,
       desc = "Git Explorer",
     },
-    {
-      "<leader>be",
-      function()
-        require("neo-tree.command").execute({ source = "buffers", toggle = true })
-      end,
-      desc = "Buffer Explorer",
-    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",

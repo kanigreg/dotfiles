@@ -48,6 +48,9 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 -- Quit all
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
+-- Swap to prev buffer
+map("n", "<leader>b", "<cmd>b#<cr>", { desc = "Toggle last buffer" })
+
 -- Telescope
 local builtin = require("telescope.builtin")
 local custom = require("utils.telescope")
