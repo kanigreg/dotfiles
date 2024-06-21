@@ -34,8 +34,7 @@ return {
       map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
 
       -- Preview
-      map("n", "<leader>ghP", gs.preview_hunk, "Preview Hunk")
-      map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
+      map("n", "<leader>ghp", gs.preview_hunk, "Preview Hunk")
 
       -- Diffs
       map("n", "<leader>ghd", gs.diffthis, "Diff This")
