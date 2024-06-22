@@ -16,13 +16,29 @@ return {
       end,
       desc = "Git Explorer",
     },
+    {
+      ",e",
+      function()
+        require("neo-tree.command").execute({ source = "gh", toggle = true })
+      end,
+      desc = "Example",
+    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
+    "kanigreg/neo-tree-gh",
   },
   opts = {
+    sources = { "filesystem", "git_status", "gh" },
+    source_selector = {
+      sources = {
+        { source = "filesystem" },
+        { source = "git_status" },
+        { source = "gh" },
+      },
+    },
     window = {
       mappings = {
         ["<space>"] = "none",
@@ -40,6 +56,12 @@ return {
         },
       },
       use_libuv_file_watcher = true,
+    },
+    gh = {
+      renderers = {},
+      window = {
+        mappings = {},
+      },
     },
     default_component_configs = {
       indent = {
