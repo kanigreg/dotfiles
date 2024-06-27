@@ -43,6 +43,7 @@ return {
       mappings = {
         ["<space>"] = "none",
       },
+      auto_expand_width = true,
     },
     filesystem = {
       follow_current_file = { enabled = true },
@@ -56,12 +57,6 @@ return {
         },
       },
       use_libuv_file_watcher = true,
-    },
-    gh = {
-      renderers = {},
-      window = {
-        mappings = {},
-      },
     },
     default_component_configs = {
       indent = {
