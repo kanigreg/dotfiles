@@ -65,6 +65,10 @@ return {
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
       },
+      file_size = { enabled = false },
+      last_modified = { enabled = false },
+      created = { enabled = false },
+      type = { enabled = false },
     },
     event_handlers = {
       {
