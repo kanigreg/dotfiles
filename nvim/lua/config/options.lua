@@ -12,9 +12,10 @@ end
 
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
-opt.spell = true
-opt.spelllang = { "en", "ru" }
 opt.formatoptions = "tcqjronl"
+opt.langmap =
+  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+opt.spelllang = "ru_ru,en_us"
 
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"

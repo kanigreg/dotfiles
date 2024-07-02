@@ -48,6 +48,7 @@ config/projections.json
 # Spell checker config
 typos.toml
 spell/
+.cspell.json
 
 # Custom project files
 Dockerfile.patched

@@ -1,10 +1,11 @@
 return {
   "mfussenegger/nvim-lint",
-  enabled = false,
+  dir = '~/oss/nvim-lint/',
+  name = 'nvim-lint',
   opts = {
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
     linters = {
-      typos = {
+      cspell = {
         diagnostics = {
           virtual_text = false,
           signs = false,
@@ -13,12 +14,12 @@ return {
     },
   },
   config = function(_, opts)
-    local ns = require("lint").get_namespace("typos")
-    vim.diagnostic.config(opts.linters.typos.diagnostics, ns)
+    local ns = require("lint").get_namespace("cspell")
+    vim.diagnostic.config(opts.linters.cspell.diagnostics, ns)
 
     vim.api.nvim_create_autocmd(opts.events, {
       callback = function()
-        require("lint").try_lint("typos")
+        require("lint").try_lint("cspell")
       end,
     })
   end,
