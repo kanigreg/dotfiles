@@ -13,6 +13,7 @@ end
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2
 opt.formatoptions = "tcqjronl"
+opt.formatexpr = "v:lua require('utils.format').formatexpr()"
 opt.langmap =
   "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 opt.spelllang = "ru_ru,en_us"
@@ -64,6 +65,7 @@ opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.termguicolors = true -- True color support
 opt.timeoutlen = 300 -- Lower than default (1000) to quickly trigger which-key
 opt.wrap = false -- Disable line wrap
+
 opt.fillchars = {
   foldopen = "",
   foldclose = "",
@@ -72,3 +74,8 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
+opt.smoothscroll = true
+opt.foldcolumn = "1"
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
