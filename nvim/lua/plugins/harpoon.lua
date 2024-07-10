@@ -11,15 +11,6 @@ return {
         desc = "Harpoon File",
       },
     }
-    for i = 1, 5 do
-      table.insert(keys, {
-        "" .. i,
-        function()
-          require("harpoon"):list():select(i)
-        end,
-        desc = "Harpoon to File " .. i,
-      })
-    end
     return keys
   end,
   config = function()
@@ -45,7 +36,8 @@ return {
         })
         :find()
     end
-    vim.keymap.set("n", "<leader>h", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" })
+    vim.keymap.set("n", "<leader>h", function()
+      toggle_telescope(harpoon:list())
+    end, { desc = "Open harpoon window" })
   end,
 }

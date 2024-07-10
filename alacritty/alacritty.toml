@@ -12,3 +12,6 @@ padding = { x = 5 }
 [font]
 normal.family = 'Iosevka Nerd Font'
 size = 11.2
+
+[mouse]
+hide_when_typing = true
