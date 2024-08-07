@@ -51,7 +51,6 @@ return {
         lineFoldingOnly = true,
       }
       lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.ruby_lsp.setup({ capabilities = capabilities })
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 

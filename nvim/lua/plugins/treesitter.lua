@@ -7,7 +7,7 @@ return {
     { "<bs>", desc = "Decrement Selection", mode = "x" },
   },
   opts = {
-    highlight = { enable = false },
+    highlight = { enable = true },
     indent = { enable = true },
     endwise = {
       enable = true,

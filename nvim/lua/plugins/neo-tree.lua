@@ -5,23 +5,9 @@ return {
     {
       "<leader>e",
       function()
-        require("neo-tree.command").execute({ toggle = true })
+        require("neo-tree.command").execute({ toggle = true, source = "last" })
       end,
       desc = "Explorer NeoTree",
-    },
-    {
-      "<leader>ge",
-      function()
-        require("neo-tree.command").execute({ source = "git_status", toggle = true })
-      end,
-      desc = "Git Explorer",
-    },
-    {
-      ",e",
-      function()
-        require("neo-tree.command").execute({ source = "gh", toggle = true })
-      end,
-      desc = "Example",
     },
   },
   dependencies = {

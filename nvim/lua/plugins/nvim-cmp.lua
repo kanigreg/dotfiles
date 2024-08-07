@@ -35,11 +35,6 @@ return {
           return item
         end,
       },
-      experimental = {
-        ghost_text = {
-          hl_group = "CmpGhostText",
-        },
-      },
     }
   end,
   config = function(_, opts)

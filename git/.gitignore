@@ -54,3 +54,6 @@ spell/
 Dockerfile.patched
 docker-compose.patched.yml
 Makefile.patched
+
+# Project specific notes
+.neonotes/

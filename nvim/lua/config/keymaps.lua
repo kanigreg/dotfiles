@@ -33,6 +33,10 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
+-- Tab navigation
+map("n", '[t', '<cmd>tabprevious<cr>', { desc = "Prev Tab"})
+map("n", ']t', '<cmd>tabnext<cr>', { desc = "Next Tab"})
+
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
@@ -89,3 +93,10 @@ map({ "n", "v" }, "<leader>f", function()
     timeout_ms = 3000,
   })
 end, { desc = "Format" })
+
+-- Project specific notes
+map("n", "<M-t>", function()
+  local current_date = os.date("%d-%m-%Y")
+  local file_name =  vim.fn.getcwd() .. "/.neonotes/" .. current_date .. ".md"
+  vim.cmd("e " .. file_name)
+end, { desc = "Project notes"})

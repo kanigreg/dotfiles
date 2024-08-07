@@ -57,7 +57,7 @@ opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 
 opt.scrolloff = 15 -- Lines of context
-opt.sidescrolloff = 8 -- Columns of context
+opt.sidescrolloff = 3 -- Columns of context
 
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
