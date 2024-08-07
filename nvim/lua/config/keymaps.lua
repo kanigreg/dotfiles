@@ -34,8 +34,8 @@ map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 -- Tab navigation
-map("n", '[t', '<cmd>tabprevious<cr>', { desc = "Prev Tab"})
-map("n", ']t', '<cmd>tabnext<cr>', { desc = "Next Tab"})
+map("n", "[t", "<cmd>tabprevious<cr>", { desc = "Prev Tab" })
+map("n", "]t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -55,11 +55,13 @@ map("v", ">", ">gv")
 -- lazy.nvim
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
--- Quit all
+-- Quit / Close
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>qb", "<cmd>%bd<cr><C-O>:bd#<cr>", { desc = "Close other buffers" })
+map("n", "<leader>qt", '<cmd>tabonly "<cr>', { desc = "Close other tabs" })
 
 -- Swap to prev buffer
-map("n", "<leader>b", "<cmd>b#<cr>", { desc = "Toggle last buffer" })
+map("n", "<leader>b", "<cmd>b#<cr>", { desc = "Toggle last buffer", group = "buffer" })
 
 -- Telescope
 local builtin = require("telescope.builtin")
@@ -85,6 +87,7 @@ map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
 map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
+-- Formatting
 map({ "n", "v" }, "<leader>f", function()
   require("conform").format({
     bufnr = vim.api.nvim_get_current_buf(),
@@ -96,7 +99,6 @@ end, { desc = "Format" })
 
 -- Project specific notes
 map("n", "<M-t>", function()
-  local current_date = os.date("%d-%m-%Y")
-  local file_name =  vim.fn.getcwd() .. "/.neonotes/" .. current_date .. ".md"
-  vim.cmd("e " .. file_name)
-end, { desc = "Project notes"})
+  local file_name = vim.fn.getcwd() .. "/.neonotes/" .. os.date("%d-%m-%Y") .. ".md"
+  vim.cmd("tabnew " .. file_name)
+end, { desc = "Project notes" })
