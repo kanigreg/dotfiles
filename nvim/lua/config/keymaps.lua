@@ -102,3 +102,11 @@ map("n", "<M-t>", function()
   local file_name = vim.fn.getcwd() .. "/.neonotes/" .. os.date("%d-%m-%Y") .. ".md"
   vim.cmd("tabnew " .. file_name)
 end, { desc = "Project notes" })
+
+-- Debug Adapter Protocol
+map("n", "<leader>dr", function()
+  require("dap").continue()
+end, { desc = "DAP: Continue" })
+map("n", "<leader>db", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "DAP: Toggle Breakpoint" })
