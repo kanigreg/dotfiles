@@ -4,6 +4,8 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       ruby = { "rubocop" },
+      json = { "jq" },
+      yaml = { "yq" }
     },
   },
   config = function(_, opts)

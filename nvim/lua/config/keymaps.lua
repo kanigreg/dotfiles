@@ -97,8 +97,16 @@ map({ "n", "v" }, "<leader>f", function()
   })
 end, { desc = "Format" })
 
--- Project specific notes
-map("n", "<M-t>", function()
+-- Neonotes
+map("n", "<M-n>", function()
   local file_name = vim.fn.getcwd() .. "/.neonotes/" .. os.date("%d-%m-%Y") .. ".md"
   vim.cmd("tabnew " .. file_name)
-end, { desc = "Project notes" })
+end, { desc = "Project specific notes" })
+map("n", "<leader>nl", function()
+  local file_name = vim.fn.getcwd() .. "/.neonotes/" .. os.date("%d-%m-%Y") .. ".md"
+  vim.cmd("tabnew " .. file_name)
+end, { desc = "Project specific notes" })
+map("n", "<leader>ng", function()
+  local file_name = vim.env.HOME .. "/Documents/neonotes/" .. os.date("%d-%m-%Y") .. ".md"
+  vim.cmd("tabnew " .. file_name)
+end, { desc = "Global notes" })
