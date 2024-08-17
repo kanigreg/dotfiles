@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.localleader = "\\"
 
+vim.cmd("filetype plugin on")
+
 local opt = vim.opt
 
 opt.encoding = "utf-8"

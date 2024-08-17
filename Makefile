@@ -16,3 +16,11 @@ packages:
 configs:
 	ansible-playbook playbooks/configs.yml -i inventory.ini
 
+tools: ruby docker zk
+
+zk:
+	ansible-playbook playbooks/tools/zk.yml -i inventory.ini
+ruby:
+	ansible-playbook playbooks/tools/ruby.yml -i inventory.ini
+docker:
+	ansible-playbook playbooks/tools/docker.yml -i inventory.ini

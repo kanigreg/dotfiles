@@ -1,4 +1,4 @@
-local map = function(mode, lhs, rhs, opts)
+function _G.map(mode, lhs, rhs, opts)
   opts = opts or {}
   vim.keymap.set(mode, lhs, rhs, { silent = true, noremap = true, desc = opts.desc })
 end
@@ -98,15 +98,12 @@ map({ "n", "v" }, "<leader>f", function()
 end, { desc = "Format" })
 
 -- Neonotes
-map("n", "<M-n>", function()
-  local file_name = vim.fn.getcwd() .. "/.neonotes/" .. os.date("%d-%m-%Y") .. ".md"
-  vim.cmd("tabnew " .. file_name)
-end, { desc = "Project specific notes" })
-map("n", "<leader>nl", function()
-  local file_name = vim.fn.getcwd() .. "/.neonotes/" .. os.date("%d-%m-%Y") .. ".md"
-  vim.cmd("tabnew " .. file_name)
-end, { desc = "Project specific notes" })
-map("n", "<leader>ng", function()
-  local file_name = vim.env.HOME .. "/Documents/neonotes/" .. os.date("%d-%m-%Y") .. ".md"
-  vim.cmd("tabnew " .. file_name)
-end, { desc = "Global notes" })
+map("n", "<leader>zc", function()
+  vim.cmd("tabnew " .. vim.env.ZK_NOTEBOOK_DIR .. ".zk/config.toml")
+end, { desc = "Config" })
+map("n", "<leader>zn", "<cmd>ZkNew { title = vim.fn.input('title: ') }<CR>", { desc = "New note" })
+map("n", "<leader>zd", "<cmd>ZkNew { dir = 'daily' }<CR>", { desc = "Daily note" })
+map("n", "<leader>zf", "<cmd>ZkNotes<CR>", { desc = "Note files" })
+map("n", "<leader>zt", "<cmd>ZkTags<CR>", { desc = "Tags" })
+map("v", "<leader>zs", "<Cmd>'<,'>ZkMatch<CR>", { desc = "Search select" })
+-- TODO: Make full text search through telescope. Like live grep `<leader>sg`

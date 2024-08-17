@@ -1,0 +1,30 @@
+- name: ZK tool configuration
+  hosts: targets
+  tags: tools
+  tasks:
+    - name: Clone neonotes repo
+      ansible.builtin.git:
+        repo: git@github.com:kanigreg/neonotes.git
+        dest: ~/Documents/neonotes/
+        force: true
+      notify:
+        - Make zk folder
+        - Link config file
+        - Link templates folder
+  handlers:
+    - name: Make zk folder
+      ansible.builtin.file:
+        path: ~/Documents/neonotes/.zk/
+        state: directory
+    - name: Link config file
+      ansible.builtin.file:
+        src: ~/dotfiles/zk/config.toml
+        dest: ~/Documents/neonotes/.zk/config.toml
+        state: link
+        force: true
+    - name: Link templates folder
+      ansible.builtin.file:
+        src: ~/dotfiles/zk/templates/
+        dest: ~/Documents/neonotes/.zk/templates
+        state: link
+        force: true

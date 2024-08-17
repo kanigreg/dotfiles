@@ -3,6 +3,9 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/autosuggestion/zsh-autosuggestions.zsh
 
+# Global
+export EDITOR="nvim -n"
+
 # PATH
 
 path+=('~/.local/share/nvim/mason/bin')
@@ -20,6 +23,11 @@ setopt hist_verify
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
 
+# ---=== ZK ===---
+# https://github.com/zk-org/zk
+
+export ZK_NOTEBOOK_DIR=$HOME/Documents/neonotes/
+
 # ---=== BAT ===---
 
 export BAT_THEME='Catppuccin Mocha'
@@ -29,5 +37,5 @@ export BAT_THEME='Catppuccin Mocha'
 source $HOME/.asdf/asdf.sh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
+# initialize completions with ZSH's compinit
 autoload -Uz compinit && compinit
