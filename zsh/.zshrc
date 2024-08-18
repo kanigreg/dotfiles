@@ -3,6 +3,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/autosuggestion/zsh-autosuggestions.zsh
 
+bindkey '^F' autosuggest-accept
 # Global
 export EDITOR="nvim -n"
 
