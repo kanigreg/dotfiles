@@ -7,9 +7,9 @@
       ansible.builtin.git:
         repo: git@github.com:kanigreg/dotfiles.git
         dest: ~/dotfiles/
-        single_branch: yes
+        single_branch: true
         version: cloud
-        force: yes
+        force: true
       notify:
         - Make link to neovim sources
         - Make link to tmux config
@@ -18,26 +18,31 @@
     - name: Clone tmux plugin manager
       ansible.builtin.git:
         repo: https://github.com/tmux-plugins/tpm
+        version: main
         dest: ~/.tmux/plugins/tpm
 
     - name: Clone zsh theme
       ansible.builtin.git:
         repo: https://github.com/romkatv/powerlevel10k.git
+        version: main
         dest: ~/.zsh/powerlevel10k
 
     - name: Clone zsh syntax highlighting plugin
       ansible.builtin.git:
         repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        version: main
         dest: ~/.zsh/syntax-highlighting
 
     - name: Clone zsh autosuggestion plugin
       ansible.builtin.git:
         repo: https://github.com/zsh-users/zsh-autosuggestions
+        version: main
         dest: ~/.zsh/autosuggestion
 
     - name: Clone fzf-git script
       ansible.builtin.git:
         repo: https://github.com/junegunn/fzf-git.sh
+        version: main
         dest: ~/.zsh/fzf-git
 
     - name: Make link to gitconfig
@@ -64,6 +69,7 @@
     - name: Clone theme for delta
       ansible.builtin.git:
         repo: https://github.com/catppuccin/delta
+        version: main
         dest: ~/.config/delta/themes/catppuccin
 
   handlers:
@@ -86,4 +92,5 @@
         src: ~/dotfiles/zsh/.zshrc
         dest: ~/.zshrc
         remote_src: true
+        mode: u=rw,g=r,o=r
         force: true

@@ -64,6 +64,7 @@
     - name: Download bat theme
       ansible.builtin.get_url:
         url: https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+        mode: u=r,g=r,o=r
         dest: ~/.config/bat/themes
 
     - name: Install lazygit

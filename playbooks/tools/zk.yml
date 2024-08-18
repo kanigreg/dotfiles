@@ -5,6 +5,7 @@
     - name: Clone neonotes repo
       ansible.builtin.git:
         repo: git@github.com:kanigreg/neonotes.git
+        version: main
         dest: ~/Documents/neonotes/
         force: true
       notify:
@@ -15,6 +16,7 @@
     - name: Make zk folder
       ansible.builtin.file:
         path: ~/Documents/neonotes/.zk/
+        mode: u=rw,g=r,o=r
         state: directory
     - name: Link config file
       ansible.builtin.file:

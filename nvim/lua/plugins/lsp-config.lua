@@ -51,6 +51,8 @@ return {
         lineFoldingOnly = true,
       }
       lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.racket_langserver.setup({})
+      lspconfig.ansiblels.setup({})
 
       vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
