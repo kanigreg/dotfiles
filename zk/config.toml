@@ -25,10 +25,7 @@ filename = "{{slug title}}"
 template = "default.md"
 
 # Path globs ignored while indexing existing notes.
-#ignore = [
-#    "drafts/*",
-#	"log.md"
-#]
+ignore = ["assets/*", "log.md"]
 
 # Configure random ID generation.
 

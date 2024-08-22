@@ -5,7 +5,8 @@ return {
       lua = { "stylua" },
       ruby = { "rubocop" },
       json = { "jq" },
-      yaml = { "yq" }
+      yaml = { "yq" },
+      toml = { "taplo" }
     },
   },
   config = function(_, opts)

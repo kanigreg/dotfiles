@@ -106,4 +106,10 @@ map("n", "<leader>zd", "<cmd>ZkNew { dir = 'daily' }<CR>", { desc = "Daily note"
 map("n", "<leader>zf", "<cmd>ZkNotes<CR>", { desc = "Note files" })
 map("n", "<leader>zt", "<cmd>ZkTags<CR>", { desc = "Tags" })
 map("v", "<leader>zs", "<Cmd>'<,'>ZkMatch<CR>", { desc = "Search select" })
+map("n", "<leader>z=", function()
+  local cmd_prefix = "!git -C " .. vim.env.ZK_NOTEBOOK_DIR
+  vim.cmd(cmd_prefix .. " add .")
+  vim.cmd(cmd_prefix .. ' commit -m "$(date +"%D %T")"')
+  vim.cmd(cmd_prefix .. " push")
+end, { desc = "Sync changes" })
 -- TODO: Make full text search through telescope. Like live grep `<leader>sg`

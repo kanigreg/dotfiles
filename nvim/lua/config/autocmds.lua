@@ -48,13 +48,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.jbuilder" },
-  once = true,
-  callback = function(event)
-    vim.bo[event.buf].filetype = 'ruby'
-  end,
-})
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -64,5 +57,23 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end
     local file = vim.uv.fs_realpath(event.match) or event.match
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+  end,
+})
+
+-- Define filetypes for custom extensions
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.jbuilder" },
+  once = true,
+  callback = function(event)
+    vim.bo[event.buf].filetype = 'ruby'
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.excalidraw" },
+  once = true,
+  callback = function(event)
+    vim.bo[event.buf].filetype = 'json'
   end,
 })
