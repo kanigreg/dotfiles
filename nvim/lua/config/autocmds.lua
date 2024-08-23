@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  desc = "Auto create dir when saving a file",
   callback = function(event)
     if event.match:match("^%w%w+:[\\/][\\/]") then
       return
@@ -60,20 +61,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
--- Define filetypes for custom extensions
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.jbuilder" },
-  once = true,
-  callback = function(event)
-    vim.bo[event.buf].filetype = 'ruby'
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.excalidraw" },
-  once = true,
-  callback = function(event)
-    vim.bo[event.buf].filetype = 'json'
-  end,
-})
