@@ -6,7 +6,8 @@ return {
       ruby = { "rubocop" },
       json = { "jq" },
       yaml = { "yq" },
-      toml = { "taplo" }
+      toml = { "taplo" },
+      d2 = { "d2" }
     },
   },
   config = function(_, opts)

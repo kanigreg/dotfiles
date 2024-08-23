@@ -66,6 +66,16 @@ return {
     vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
     vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
 
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+    parser_config.d2 = {
+      install_info = {
+        url = "https://git.pleshevski.ru/pleshevskiy/tree-sitter-d2",
+        revision = "main",
+        files = { "src/parser.c", "src/scanner.c" },
+      },
+      filetype = "d2",
+    }
+
     require("nvim-treesitter.configs").setup(opts)
   end,
   dependencies = {
