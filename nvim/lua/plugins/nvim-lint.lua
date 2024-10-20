@@ -1,6 +1,5 @@
 return {
   "mfussenegger/nvim-lint",
-  dir = '~/oss/nvim-lint/',
   name = 'nvim-lint',
   opts = {
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
