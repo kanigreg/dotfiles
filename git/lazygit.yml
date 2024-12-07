@@ -2,3 +2,7 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+# customCommands:
+#   - key: '<c-o>'
+#     context: 'localBranches'
+#     command: "xdg-open https://track.magnit.ru/browse/{{ splitList `_` .Form.Branch | first }}"

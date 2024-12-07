@@ -1,9 +1,9 @@
-import = [
+general.import = [
   # curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
-  "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml",
 ]
 
-shell = "/usr/bin/zsh"
+terminal.shell = "/usr/bin/zsh"
 
 [window]
 decorations = "None"
