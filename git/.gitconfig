@@ -41,3 +41,5 @@
 [diff]
   colorMoved = default
 
+[rebase]
+	updateRefs = true
