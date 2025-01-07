@@ -1,9 +1,16 @@
-setup:
+setup: link
 	cp inventory_example inventory.ini
-	mkdir -p ~/.config/alacritty/
 	cp ./alacritty/alacritty.toml ~/.config/alacritty/
 	# Install catppuccin theme for alacritty
 	curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+
+link:
+	ln -sf ./nvim/ ~/.config/nvim
+	ln -sf ./hyprland/ ~/.config/hypr
+	ln -sf ./waybar/ ~/.config/waybar
+
+ensure_folders:
+	mkdir -p ~/.config/alacritty/
 
 ping:
 	ansible all -i inventory.ini -m ping

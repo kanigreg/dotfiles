@@ -9,3 +9,7 @@ vim.opt.langmap =
   "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 vim.opt.spelllang = "en_us,ru_ru"
 vim.opt.spell = true
+
+vim.filetype.add({
+  pattern = { ["hypr.*.conf"] = "hyprlang" },
+})
