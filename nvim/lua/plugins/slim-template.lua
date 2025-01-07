@@ -1,4 +1,4 @@
 return {
   "slim-template/vim-slim",
-  config = true,
+  config = function() end,
 }
