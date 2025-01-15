@@ -6,8 +6,9 @@ setup: link
 
 link:
 	ln -sf ./nvim/ ~/.config/nvim
-	ln -sf ./hyprland/ ~/.config/hypr
+	ln -sf ./hypr/ ~/.config/hypr
 	ln -sf ./waybar/ ~/.config/waybar
+	ln -sf ./swaync/ ~/.config/swaync
 
 ensure_folders:
 	mkdir -p ~/.config/alacritty/

@@ -57,3 +57,6 @@ Makefile.patched
 
 # Project specific notes
 .neonotes/
+
+# Kulalal rest client
+http-client.private.env.json
