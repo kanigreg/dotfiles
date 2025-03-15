@@ -6,6 +6,7 @@ return {
       json = { "jq" },
       yaml = { "yq" },
       toml = { "taplo" },
+      xml = { "xmlformatter" },
     },
   },
 }

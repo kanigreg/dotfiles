@@ -9,5 +9,5 @@ map("n", "<leader>bo", Snacks.bufdelete.other, { desc = "Close other buffers" })
 map("n", "<leader>nd", function()
   local filename = os.date("%Y/%B/%d-%a")
   local path = "~/Documents/neonotes/daily/" .. filename .. ".md"
-  vim.cmd.tabnew(path)
+  vim.cmd("e " .. path)
 end, { desc = "Go to daily file" })

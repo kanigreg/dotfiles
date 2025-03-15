@@ -36,7 +36,13 @@
   line-numbers = true
 
 [merge]
+  tool = diffview
   conflictstyle = diff3
+[mergetool]
+  prompt = false
+  keepBackup = false
+[mergetool "diffview"]
+  cmd = nvim -n -c "DiffViewOpen" "$MERGE"
 
 [diff]
   colorMoved = default
