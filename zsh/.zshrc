@@ -10,6 +10,7 @@ export EDITOR="nvim -n"
 # PATH
 
 path+=('~/.local/share/nvim/mason/bin')
+path+=('~/minio-binaries/')
 
 # ---=== ZSH History ===---
 
@@ -33,10 +34,4 @@ export ZK_NOTEBOOK_DIR=$HOME/Documents/neonotes/
 
 export BAT_THEME='Catppuccin Mocha'
 
-# ---=== ASDF ===---
-
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# append completions to fpath
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-# initialize completions with ZSH's compinit
-autoload -Uz compinit && compinit
+# ---=== MISE ===---
