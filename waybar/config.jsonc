@@ -30,11 +30,7 @@
     "disable-scroll": true,
     "all-outputs": true,
     "warp-on-scroll": false,
-    "format": "{name}: {icon}",
-    "format-icons": {
-      "active": "",
-      "default": ""
-    }
+    "format": "{name}"
   },
   "hyprland/language": {
     "format-en": "en",

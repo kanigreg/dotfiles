@@ -29,7 +29,8 @@
 }
 
 #workspaces button.active {
-  color: @sky;
+  color: @peach;
+  background-color: @surface2;
   border-radius: 1rem;
 }
 
