@@ -7,6 +7,8 @@ return {
       yaml = { "yq" },
       toml = { "taplo" },
       xml = { "xmlformatter" },
+      html = { "prettier" },
+      css = { "prettier" },
     },
   },
 }
