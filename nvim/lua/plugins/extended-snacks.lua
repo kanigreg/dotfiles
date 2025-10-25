@@ -17,8 +17,8 @@ return {
             list = {
               keys = {
                 ["w"] = { { "pick_win", "jump" }, mode = { "n", "i" } },
-                ["v"] = { "edit_vsplit", mode = { "i", "n" } },
-                ["s"] = { "edit_split", mode = { "i", "n" } },
+                ["s"] = { "edit_vsplit", mode = { "i", "n" } },
+                ["S"] = { "edit_split", mode = { "i", "n" } },
               },
             },
           },
