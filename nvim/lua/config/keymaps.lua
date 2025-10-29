@@ -11,3 +11,5 @@ map("n", "<leader>nd", function()
   local path = "~/Documents/neonotes/daily/" .. filename .. ".md"
   vim.cmd("e " .. path)
 end, { desc = "Go to daily file" })
+
+map("t", "<C-[>", "<C-\\><C-N>", { silent = true })
