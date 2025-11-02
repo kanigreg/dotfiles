@@ -33,5 +33,6 @@ export ZK_NOTEBOOK_DIR=$HOME/Documents/neonotes/
 # ---=== BAT ===---
 
 export BAT_THEME='Catppuccin Mocha'
+export MANPAGER="sh -c 'col -bx | bat --theme=default -l man -p'"
 
 # ---=== MISE ===---
