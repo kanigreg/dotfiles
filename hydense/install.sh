@@ -5,7 +5,7 @@ set -eEo pipefail
 
 export DOTFILES_PATH="$HOME/.local/share/dotfiles"
 export HYDENSE_INSTALL="$HOME/.local/share/dotfiles/hydense/install"
-export HYDENSE_LOGFILE="/var/log/hydense/install.log"
+export HYDENSE_LOGFILE="/var/log/hydense-install.log"
 export PATH="$DOTFILES_PATH/hydense/bin:$PATH"
 
 source "$HYDENSE_INSTALL/helpers/all.sh"

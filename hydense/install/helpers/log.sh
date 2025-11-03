@@ -1,9 +1,9 @@
 #!/bin/bash
 
 clear_log_file() {
-  echo "" | tee "$HYDENSE_LOGFILE"
+  cat "$HYDENSE_LOGFILE"
 }
 
 log() {
-  echo "$@" | tee -a "$HYDENSE_LOGFILE"
+  echo "$@" | sudo tee -a "$HYDENSE_LOGFILE"
 }
