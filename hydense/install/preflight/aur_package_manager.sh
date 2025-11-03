@@ -9,5 +9,5 @@ if ! command -v yay &>/dev/null; then
   cd /tmp/hydense/yay || exit 2
 
   log "\nYay installation"
-  makepkg -si
+  makepkg -si --noconfirm
 fi
