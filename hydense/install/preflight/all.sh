@@ -1,3 +1,3 @@
 #!/bin/bash
 
-source ./aur_package_manager.sh
+source "$HYDENSE_INSTALL/preflight/aur_package_manager.sh"
