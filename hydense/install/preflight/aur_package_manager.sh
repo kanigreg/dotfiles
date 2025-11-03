@@ -1,9 +1,13 @@
-sudo pacman -S --needed git base-devel
+#!/bin/bash
 
-log "\nCloning yay repo to temp directory"
-git clone "https://aur.archlinux.org/yay-bin.git" /tmp/hydense/yay >/dev/null
+if ! command -v yay &>/dev/null; then
+  sudo pacman -S --needed git base-devel
 
-cd /tmp/hydense/yay || exit 2
+  log "\nCloning yay repo to temp directory"
+  git clone "https://aur.archlinux.org/yay-bin.git" /tmp/hydense/yay >/dev/null
 
-log "\nYay installation"
-makepkg -si
+  cd /tmp/hydense/yay || exit 2
+
+  log "\nYay installation"
+  makepkg -si
+fi
