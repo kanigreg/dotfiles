@@ -1,4 +1,20 @@
-# Window manager and supported tools
+# Window manager and necessary lib and tools
 hyprland
+qt5-wayland
+
+# Terminal emulator
 alacritty
 
+# Notification deamon
+mako
+
+# Audio
+pipewire
+wireplumber
+
+# XDG desktop portal
+# https://wiki.archlinux.org/title/XDG_Desktop_Portal
+xdg-desktop-portal-hyprland
+
+# Text font
+ttf-iosevka-nerd
