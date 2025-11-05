@@ -9,4 +9,4 @@ HYDENSE=$DOTFILES_PATH/hydense
 PATH="$DOTFILES_PATH/hydense/bin:\$PATH"
 EOF
 
-chmod +x "$DOTFILES_PATH/hydense/bin/*"
+chmod +x "$DOTFILES_PATH"/hydense/bin/*
