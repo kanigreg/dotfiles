@@ -1,0 +1,25 @@
+#!/bin/bash
+
+help() {
+  cat <<EOF
+Manage Hydense utilities
+
+Usage:
+  hydense <command> [arguments]
+
+Commands:
+  theme       Manage color themes
+  help        Show this help message
+
+Examples:
+  hydense theme ls
+  hydense help
+EOF
+}
+
+command_name=$1
+shift
+case $command_name in
+theme) hydense-theme "$@" ;;
+*) help ;;
+esac

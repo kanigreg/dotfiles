@@ -1,0 +1,55 @@
+#!/bin/bash
+
+help() {
+  cat <<EOF
+Manage color themes
+
+Usage:
+  theme <command> [arguments]
+
+Commands:
+  ls                 List all available themes.
+  set <name>         Apply the specified theme.
+  help               Show this help message.
+
+Examples:
+  theme ls
+      Lists all available themes.
+
+  theme set catppuccin
+      Applies the "catppuccin" theme.
+
+  theme help
+      Shows this help screen.
+
+Notes:
+  - Commands are case-sensitive.
+  - Themes must exist in the themes directory.
+
+EOF
+}
+
+theme_list() {
+  find ~/.config/hydense/themes/ -mindepth 1 -maxdepth 1 \( -type d -o -type l \)
+}
+
+ls() {
+  theme_list | sort | while read -r path; do
+    basename "$path" | sed -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g'
+  done
+}
+
+set() {
+  if theme_list | grep -qx "$1"; then
+    ln -snf ~/.config/hydense/themes/"$1" ~/.config/hydense/current/theme
+  else
+    echo "Theme '$1' not found"
+  fi
+
+}
+
+case $1 in
+ls) ls ;;
+set) set "$2" ;;
+*) help ;;
+esac

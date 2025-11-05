@@ -3,8 +3,8 @@
 # Exit immediately if a command exits with a non-zero status
 set -eEo pipefail
 
-export DOTFILES_PATH="$HOME/.local/share/dotfiles"
-export HYDENSE_INSTALL="$HOME/.local/share/dotfiles/hydense/install"
+export DOTFILES_PATH="$(realpath $(dirname "$0"))"
+export HYDENSE_INSTALL="$DOTFILES_PATH/hydense/install"
 export HYDENSE_LOGFILE="/var/log/hydense-install.log"
 export PATH="$DOTFILES_PATH/hydense/bin:$PATH"
 
