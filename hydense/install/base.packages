@@ -18,3 +18,11 @@ xdg-desktop-portal-hyprland
 
 # Text font
 ttf-iosevka-nerd
+
+# Neovim as default editor
+neovim
+tree-sitter-cli
+lazygit
+fzf
+ripgrep
+fd
