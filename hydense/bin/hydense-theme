@@ -36,7 +36,7 @@ ls() {
 }
 
 set() {
-  local theme_path=./config/hydense/themes/"$1"
+  local theme_path=~/.config/hydense/themes/"$1"
   if [[ -d "$theme_path" || -L "$theme_path" ]]; then
     ln -snf "$theme_path" ~/.config/hydense/current/theme
   else
