@@ -29,23 +29,19 @@ Notes:
 EOF
 }
 
-theme_list() {
-  find ~/.config/hydense/themes/ -mindepth 1 -maxdepth 1 \( -type d -o -type l \)
-}
-
 ls() {
-  theme_list | sort | while read -r path; do
+  find ~/.config/hydense/themes/ -mindepth 1 -maxdepth 1 \( -type d -o -type l \) | sort | while read -r path; do
     basename "$path"
   done
 }
 
 set() {
-  if theme_list | grep -qx "$1"; then
-    ln -snf ~/.config/hydense/themes/"$1" ~/.config/hydense/current/theme
+  local theme_path=./config/hydense/themes/"$1"
+  if [[ -d "$theme_path" || -L "$theme_path" ]]; then
+    ln -snf "$theme_path" ~/.config/hydense/current/theme
   else
     echo "Theme '$1' not found"
   fi
-
 }
 
 case $1 in
