@@ -10,5 +10,5 @@ export PATH="$DOTFILES_PATH/hydense/bin:$PATH"
 
 source "$HYDENSE_INSTALL/helpers/all.sh"
 source "$HYDENSE_INSTALL/preflight/all.sh"
-source "$HYDENSE_INSTALL/config/all.sh"
 source "$HYDENSE_INSTALL/packaging/all.sh"
+source "$HYDENSE_INSTALL/config/all.sh"
