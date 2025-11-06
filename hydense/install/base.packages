@@ -8,10 +8,6 @@ alacritty
 # Notification deamon
 mako
 
-# Audio
-pipewire
-wireplumber
-
 # XDG desktop portal
 # https://wiki.archlinux.org/title/XDG_Desktop_Portal
 xdg-desktop-portal-hyprland

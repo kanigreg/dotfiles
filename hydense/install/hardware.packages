@@ -1,0 +1,17 @@
+# Hardware oriented packages
+
+# GPU
+vulkan-intel
+intel-media-driver
+
+# Audio
+pipewire
+wireplumber
+sof-firmware
+
+# CPU
+intel-ucode
+
+# Network
+iwd
+
