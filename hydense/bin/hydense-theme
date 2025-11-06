@@ -35,7 +35,7 @@ theme_list() {
 
 ls() {
   theme_list | sort | while read -r path; do
-    basename "$path" | sed -E 's/(^|-)([a-z])/\1\u\2/g; s/-/ /g'
+    basename "$path"
   done
 }
 
