@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eEo pipefail
+
 help() {
   cat <<EOF
 Manage Hydense utilities
