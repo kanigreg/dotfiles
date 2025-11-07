@@ -1,0 +1,8 @@
+/* for styles to be applied you need to activate the setting in the browser
+ * 1. Open `about:config`
+ * 2. Change `toolkit.legacyUserProfileCustomizations.stylesheets` setting to `true`
+*/
+
+#TabsToolbar {
+  visibility: collapse;
+}
