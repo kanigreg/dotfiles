@@ -20,3 +20,5 @@ ln -snf ~/.config/hydense/current/theme/eza.yml ~/.config/eza/theme.yml
 
 mkdir -p ~/.config/bat/themes
 ln -snf ~/.config/hydense/current/theme/bat.xml ~/.config/bat/themes/current.tmTheme
+
+bat cache --build
