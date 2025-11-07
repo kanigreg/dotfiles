@@ -20,6 +20,7 @@ EOF
 command_name=$1
 shift
 case $command_name in
+logs) less /var/log/hydense-install.log ;;
 theme) hydense-theme "$@" ;;
 *) help ;;
 esac
