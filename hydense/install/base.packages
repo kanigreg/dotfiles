@@ -35,5 +35,7 @@ eza
 zoxide
 bat
 btop
-tmux
 
+# Development tools
+docker
+tmux
