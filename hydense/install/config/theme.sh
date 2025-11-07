@@ -10,13 +10,13 @@ ln -snf ~/.config/hydense/themes/catppuccin ~/.config/hydense/current/theme
 
 # Some utils have no configurable path to the theme, so just link it in the required folder.
 mkdir -p ~/.config/btop/themes
-ln -snf ~/.config/omarchy/current/theme/btop.theme ~/.config/btop/themes/current.theme
+ln -snf ~/.config/hydense/current/theme/btop.theme ~/.config/btop/themes/current.theme
 
 mkdir -p ~/.config/mako
-ln -snf ~/.config/omarchy/current/theme/mako.ini ~/.config/mako/config
+ln -snf ~/.config/hydense/current/theme/mako.ini ~/.config/mako/config
 
 mkdir -p ~/.config/eza
-ln -snf ~/.config/omarchy/current/theme/eza.yml ~/.config/eza/theme.yml
+ln -snf ~/.config/hydense/current/theme/eza.yml ~/.config/eza/theme.yml
 
 mkdir -p ~/.config/bat/themes
-ln -snf ~/.config/omarchy/current/theme/bat.xml ~/.config/bat/themes/current.tmTheme
+ln -snf ~/.config/hydense/current/theme/bat.xml ~/.config/bat/themes/current.tmTheme
