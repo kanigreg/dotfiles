@@ -22,6 +22,8 @@ lazygit
 fzf
 ripgrep
 fd
+lua51
+luarocks
 
 # Browser
 firefox
