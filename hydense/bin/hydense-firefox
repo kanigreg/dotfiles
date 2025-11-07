@@ -1,0 +1,42 @@
+#!/bin/bash
+
+help() {
+  cat <<EOF
+Manage Hydense Firefox utilities
+
+Usage:
+  hydense-firefox <command> [arguments]
+
+Commands:
+  collapse_tabbar    Collapse Firefox tab bar using custom CSS
+  help               Show this help message
+
+Examples:
+  ff collapse_tabbar
+  ff help
+EOF
+}
+
+collapse_tabbar() {
+  if [[ ! -d ~/.mozilla/firefox ]]; then
+    firefox &
+  fi
+
+  sleep 0.5
+
+  cd ~/.mozilla/firefox/*.default-release || exit 1
+  mkdir chrome/
+  touch userChrome.css
+  cat "$HYDENSE"/defaults/firefox/collapsed_tabbar.css >>./chrome/userChrome.css
+  cd - || exit 1
+
+  # Change configuration to allow firefox use custom CSS
+  sed -i s/legacyUserProfileCustomizations.stylesheets\", false/ \
+    legacyUserProfileCustomizations.stylesheets\", true/g \
+    "$HOME"/.mozilla/firefox/*.default-release
+}
+
+case $1 in
+collapse_tabbar) collapse_tabbar ;;
+*) help ;;
+esac

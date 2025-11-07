@@ -9,10 +9,14 @@ Usage:
 
 Commands:
   theme       Manage color themes
+  ff          Manage Firefox integration
+  logs        View installation logs
   help        Show this help message
 
 Examples:
   hydense theme ls
+  hydense ff collapse_tabbar
+  hydense logs
   hydense help
 EOF
 }
@@ -20,6 +24,7 @@ EOF
 command_name=$1
 shift
 case $command_name in
+ff) hydense-firefox "$@" ;;
 logs) less /var/log/hydense-install.log ;;
 theme) hydense-theme "$@" ;;
 *) help ;;
