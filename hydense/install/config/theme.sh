@@ -18,5 +18,5 @@ ln -snf ~/.config/omarchy/current/theme/mako.ini ~/.config/mako/config
 mkdir -p ~/.config/eza
 ln -snf ~/.config/omarchy/current/theme/eza.yml ~/.config/eza/theme.yml
 
-mkdir -p ~/.config/eza
+mkdir -p ~/.config/bat/themes
 ln -snf ~/.config/omarchy/current/theme/bat.xml ~/.config/bat/themes/current.tmTheme
