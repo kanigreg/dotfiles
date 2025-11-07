@@ -42,6 +42,8 @@ set() {
   else
     echo "Theme '$1' not found"
   fi
+
+  bat cache --build
 }
 
 case $1 in

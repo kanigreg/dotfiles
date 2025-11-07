@@ -1,6 +1,7 @@
 # Window manager and necessary lib and tools
 hyprland
 qt5-wayland
+waybar
 
 # Terminal emulator
 alacritty
@@ -27,3 +28,12 @@ luarocks
 
 # Browser
 firefox
+
+# CLI utils
+lazydocker
+eza
+zoxide
+bat
+btop
+tmux
+

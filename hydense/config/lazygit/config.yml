@@ -1,0 +1,26 @@
+customCommands:
+  - key: '<c-o>'
+    context: 'commits'
+    command: "xdg-open https://track.magnit.ru/browse/{{ slice .SelectedCommit.Name 1 8 }}"
+gui:
+  branchColors:
+    demo: yellow
+    test_contur_demo: yellow
+    staging: yellow
+    master: yellow
+    main: yellow
+    production: red
+    feature: green
+    research: black
+  branchColorPatterns:
+    '^feature\/': green
+    '^DX\/': green
+    master: yellow
+    demo: yellow
+    test_contur_demo: yellow
+    staging: yellow
+    production: red
+    'research\/': black
+    's-\/': '#9966ff'
+    'techsolution\/': '#45a2c3'
+    # 'sbp': '#9966ff'
