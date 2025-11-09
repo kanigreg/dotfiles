@@ -3,7 +3,7 @@
 
 # All the default Hydense aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source "${HYDENSE:-$HOME/.local/share/dotfiles/hydense}/default/bash/rc"
+source ~/.local/share/dotfiles/hydense/defaults/bash/rc
 
 # Add your own exports, aliases, and functions here.
 #

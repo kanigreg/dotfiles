@@ -4,4 +4,4 @@ mkdir -p ~/.config
 cp -R "$DOTFILES_PATH"/hydense/config/* ~/.config/
 
 # Use default bashrc
-cp ~/.local/share/omarchy/default/bashrc ~/.bashrc
+cp ~/.local/share/dotfiles/hydense/defaults/bashrc ~/.bashrc
