@@ -1,3 +1,8 @@
 inventory.ini
 nvim/dev-plugins
 
+# Hyprland
+config/hypr/secrets.conf
+
+# Tmux
+config/tmux/plugins
