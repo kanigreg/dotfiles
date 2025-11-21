@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo pacman -Sy
+mapfile -t packages < <(grep -v '^#' "$DOTFILES/install/packages" | grep -v '^$')
+sudo pacman -S --noconfirm --needed "${packages[@]}"
+
