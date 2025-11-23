@@ -1,0 +1,15 @@
+#!/bin/bash
+
+create_sample() {
+  local sample="$1"
+  mkdir -p ~/Lab/"$sample/.local"
+  (cat ~/.config/tmux/template.yml | sed "s/{ name }/$sample/g") > ~/Lab/"$sample"/.tmuxinator.yml
+}
+
+cmd=$1
+shift
+
+case "$cmd" in
+  create | analyze)
+    create_sample "$@"
+esac

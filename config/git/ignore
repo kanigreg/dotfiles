@@ -64,3 +64,7 @@ kulala/
 
 # Personaly used project specific files
 .local/
+
+# Tmuxinator
+.tmuxinator.yml
+.tmuxinator.yaml
