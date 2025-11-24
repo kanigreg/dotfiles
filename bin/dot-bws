@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Wrapper for getting single secret value
+
+bws secret list --output tsv --color no |
+  tail -n +2 |    # Reject header
+  grep -w "$1" |  # Match with given key
+  cut -f 3 |      # Take secrets value
+  tr -d '\n'      # Remove newline
