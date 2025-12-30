@@ -2,8 +2,25 @@
 
 # Wrapper for getting single secret value
 
-bws secret list --output tsv --color no |
-  tail -n +2 |    # Reject header
-  grep -w "$1" |  # Match with given key
-  cut -f 3 |      # Take secrets value
-  tr -d '\n'      # Remove newline
+get() {
+  bws secret list --output tsv --color no |
+    tail -n +2 |    # Reject header
+    grep -w "$1" |  # Match with given key
+    cut -f 3 |      # Take secrets value
+    tr -d '\n'      # Remove newline
+}
+
+inject() {
+  local project_env="BWS_PROJECT_${2^^}"
+  shift 2
+  bws run --project-id "${!project_env}" "$@"
+}
+
+case "$1" in
+  project)
+    inject "$@"
+    ;;
+  *)
+    get "$1"
+    ;;
+esac

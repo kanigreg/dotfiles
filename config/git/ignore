@@ -17,9 +17,6 @@
 # Local specific docker compose config
 personal-compose.yml
 
-# Vendor packages
-vendor/
-
 # Bundle local configurations
 .bundle/
 

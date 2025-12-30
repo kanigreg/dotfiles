@@ -1,7 +1,7 @@
-# /home/greg/.config/tmuxinator/omarchy.yml
+# /home/greg/.config/tmuxinator/forrest-backend.yml
 
-name: omarchy
-root: ~/.local/share/omarchy
+name: forrest-backend
+root: ~/Work/forrest-backend
 
 # Optional tmux socket
 # socket_name: foo
@@ -24,10 +24,11 @@ root: ~/.local/share/omarchy
 # on_project_exit: command
 
 # Run on project stop
-# on_project_stop: command
+on_project_stop: docker compose down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
+pre_window: export KUBECONFIG=$HOME/Work/forrest-backend/.local/twc-k8s-config.yaml
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -46,3 +47,5 @@ root: ~/.local/share/omarchy
 
 windows:
   -  Editor: nvim -n
+  - 󱂅 Logs: docker compose up
+  -  k8s

@@ -6,10 +6,15 @@ local map = vim.keymap.set
 
 map("n", "<leader>bo", Snacks.bufdelete.other, { desc = "Close other buffers" })
 
-map("n", "<leader>nd", function()
-  local filename = os.date("%Y/%B/%d-%a")
+map("n", "<leader>fd", function()
+  local filename = os.date("%B/%d-%a")
   local path = "~/Documents/neonotes/daily/" .. filename .. ".md"
   vim.cmd("e " .. path)
 end, { desc = "Go to daily file" })
 
-map("t", "<C-[>", "<C-\\><C-N>", { silent = true })
+map("n", "<leader>fD", function()
+  local filename = os.date("%B/%d-%a")
+  local root_dir = require("lazyvim.util").root()
+  local path = root_dir .. "/.local/daily/" .. filename .. ".md"
+  vim.cmd("e " .. path)
+end, { desc = "Go to local daily file" })

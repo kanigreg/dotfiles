@@ -1,7 +1,7 @@
-# /home/greg/.config/tmuxinator/dotfiles.yml
+# /home/greg/.config/tmuxinator/forrest-backend.yml
 
-name: dotfiles
-root: ~/.local/share/dotfiles/
+name: lab
+root: ~/Lab/<%= @args[0] %>
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,10 +45,4 @@ root: ~/.local/share/dotfiles/
 # attach: false
 
 windows:
-  -  Dotfiles: nvim -n
-  -  Omarchy:
-      - cd ~/.local/share/omarchy/
-      - nvim -n
-  -  Configs:
-      - cd ~/.config/
-      - nvim -n
+  -  Editor: nvim -n

@@ -6,16 +6,22 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  keys = {
+    { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI chat" },
+  },
   opts = {
     strategies = {
       chat = {
-        adapter = "yandex_ai",
+        adapter = "deepseek",
       },
       inline = {
-        adapter = "yandex_ai",
+        adapter = "deepseek",
       },
     },
     adapters = {
+      acp = {
+        show_defaults = false,
+      },
       http = {
         opts = {
           show_defaults = false,
@@ -23,6 +29,14 @@ return {
         },
         yandex_ai = yandex_ai_adapter,
       },
+      deepseek = function()
+        return require("codecompanion.adapters").extend("deepseek", {
+          url = "https://agent.timeweb.cloud/api/v1/cloud-ai/agents/4b3e3409-5148-43ab-b278-c0ff2c5e4410/v1/chat/completions",
+          env = {
+            api_key = "cmd:dot-bws timeweb_ai_token",
+          },
+        })
+      end,
     },
   },
 }
