@@ -1,6 +1,6 @@
 # /home/greg/.config/tmuxinator/forrest-backend.yml
 
-name: forrest-backend
+name: forrest
 root: ~/Work/forrest-backend
 
 # Optional tmux socket
@@ -48,4 +48,4 @@ pre_window: export KUBECONFIG=$HOME/Work/forrest-backend/.local/twc-k8s-config.y
 windows:
   -  Editor: nvim -n
   - 󱂅 Logs: docker compose up
-  -  k8s
+  -  k8s: bash

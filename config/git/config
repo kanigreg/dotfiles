@@ -1,5 +1,5 @@
 [include]
-	path = ~/.config/delta/theme.gitconfig
+  path = ~/.config/delta/theme.gitconfig
 
 [user]
   email = kanigreg@gmail.com
