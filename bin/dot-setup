@@ -26,6 +26,10 @@ share_links() {
   done;
 }
 
+update_config_caches() {
+  bat cache --build
+}
+
 install_tmux_package_manager() {
   if [[ ! -d ~/.config/tmux/plugins/tpm ]]; then
     git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
@@ -49,6 +53,7 @@ rm -fr /tmp/dotfiles.log
 
 # Run steps
 run_logged share_links
+run_logged update_config_caches
 run_logged install_tmux_package_manager
 run_logged append_dotfiles_bashrc
 
