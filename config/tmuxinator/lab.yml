@@ -1,6 +1,6 @@
 # /home/greg/.config/tmuxinator/forrest-backend.yml
 
-name: lab
+name: <%= @args[0] %>
 root: ~/Lab/<%= @args[0] %>
 
 # Optional tmux socket
@@ -15,7 +15,7 @@ root: ~/Lab/<%= @args[0] %>
 # on_project_start: command
 
 # Run on project start, the first time
-# on_project_first_start: command
+on_project_first_start: mkdir -p ~/Lab/<%= args[0] %>
 
 # Run on project start, after the first time
 # on_project_restart: command

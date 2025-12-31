@@ -1,6 +1,6 @@
 # /home/greg/.config/tmuxinator/forrest-backend.yml
 
-name: work
+name: <%= @args[0] %>
 root: ~/Work/<%= @args[0] %>
 
 # Optional tmux socket
