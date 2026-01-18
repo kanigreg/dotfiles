@@ -40,5 +40,7 @@ gui:
     "*": "#a6adc8"
 
   branchColorPatterns:
+    "*": "#a6adc8"
     "^main$": yellow
     '^[\d]{4,5}\/': green
+    '^s[\d]{4,5}\/': "#89b4fa"
