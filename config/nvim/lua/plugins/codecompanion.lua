@@ -1,3 +1,4 @@
+local bothub_api_adapter = require("plugins.codecompanion.bothub_adapter")
 local yandex_ai_adapter = require("plugins.codecompanion.yandex_ai_adapter")
 
 return {
@@ -10,12 +11,12 @@ return {
     { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI chat" },
   },
   opts = {
-    strategies = {
+    interactions = {
       chat = {
-        adapter = "deepseek",
+        adapter = "bothub_api",
       },
       inline = {
-        adapter = "deepseek",
+        adapter = "bothub_api",
       },
     },
     adapters = {
@@ -28,6 +29,7 @@ return {
           show_model_choices = true,
         },
         yandex_ai = yandex_ai_adapter,
+        bothub_api = bothub_api_adapter,
       },
       deepseek = function()
         return require("codecompanion.adapters").extend("deepseek", {
