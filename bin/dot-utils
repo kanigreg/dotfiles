@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cmd=$1
+shift
+
+case "$cmd" in
+  base64)
+    KEY="${1%%=*}"
+    VALUE="${1#*=}"
+    printf "  %s: %s\n" "$KEY" "$(printf '%s' "$VALUE" | base64)"
+esac

@@ -84,9 +84,9 @@ local bothub_adapter = function()
       api_key = "cmd: dot-bws bothub_api",
     },
     handlers = {
-      ---Handle response from provider and return available model ids
-      ---@params data table
-      ---@return table { id = string }
+      ---Function to extract models array from API response
+      ---@param data any response JSON decoded
+      ---@return { id: string }[]
       models = function(data)
         return data
       end,

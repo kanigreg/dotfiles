@@ -8,7 +8,9 @@ return {
     "nvim-lua/plenary.nvim",
   },
   keys = {
-    { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI chat" },
+    { "<leader>ai", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI chat" },
+    { "<leader>an", "<cmd>CodeCompanionChat<cr>", desc = "New AI chat" },
+    { "<leader>a", "<cmd>CodeCompanionActions<cr>", mode = "v", desc = "AI menu" },
   },
   opts = {
     interactions = {

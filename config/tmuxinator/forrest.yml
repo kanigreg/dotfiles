@@ -48,4 +48,5 @@ pre_window: export KUBECONFIG=$HOME/Work/forrest-backend/.local/twc-k8s-config.y
 windows:
   -  Editor: nvim -n
   - 󱂅 Logs: docker compose up
-  -  k8s: bash
+  -  k8s: k9s
+  -  lazygit: lazygit

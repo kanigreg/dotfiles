@@ -17,4 +17,14 @@ alias t='tmuxinator'
 alias ts='tmuxinator start'
 
 # k8s
-alias ks='kubectl'
+source <(kubectl completion bash)
+alias k='kubectl'
+alias kd='kubectl -n dev01'
+alias kq='kubectl -n qa01'
+alias krc='kubectl -n rc01'
+alias kr='kubectl -n release'
+complete -o default -F __start_kubectl k
+complete -o default -F __start_kubectl kd
+complete -o default -F __start_kubectl kq
+complete -o default -F __start_kubectl krc
+complete -o default -F __start_kubectl kr

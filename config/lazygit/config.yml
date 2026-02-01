@@ -4,7 +4,7 @@ git:
 customCommands:
   - key: "<c-o>"
     context: "commits"
-    command: "xdg-open https://tracker.yandex.ru/{{ slice .SelectedCommit.Name 0 17 }}"
+    command: "xdg-open https://tracke6.yandex.ru/{{ slice .SelectedCommit.Name 0 17 }}"
 
 services:
   "gitlab.it-forrest.ru": "gitlab:gitlab.it-forrest.ru"
@@ -42,5 +42,5 @@ gui:
   branchColorPatterns:
     "*": "#a6adc8"
     "^main$": yellow
-    '^[\d]{4,5}\/': green
-    '^s[\d]{4,5}\/': "#89b4fa"
+    '^[\d]{1,6}\/': green
+    '^s[\d]{1,6}\/': "#89b4fa"
