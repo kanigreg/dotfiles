@@ -3,6 +3,7 @@ nvim/dev-plugins
 
 # Hyprland
 config/hypr/secrets.conf
+config/hypr/shaders/*.glsl
 
 # Tmux
 config/tmux/plugins

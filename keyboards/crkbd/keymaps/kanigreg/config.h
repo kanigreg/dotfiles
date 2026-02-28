@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define USE_MATRIX_I2C
 
 #define TAPPING_TERM 200
-#define QUICK_TAP_TERM 0
+#define QUICK_TAP_TERM 200
 #define FLOW_TAP_TERM 150
 
 // Left-hand home row mods
