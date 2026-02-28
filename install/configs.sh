@@ -12,15 +12,15 @@ sudo usermod -aG docker "$USER"
 newgrp docker
 
 printf "$INFO\n" "[git] configuring..."
-cp ../config/git/ "$HOME/.config/"
-cp ../config/lazygit/ "$HOME/.config/"
-cp ../config/delta/ "$HOME/.config/"
+cp "$DOTFILES"/config/git/ "$HOME/.config/"
+cp "$DOTFILES"/config/lazygit/ "$HOME/.config/"
+cp "$DOTFILES"/config/delta/ "$HOME/.config/"
 
 printf "$INFO\n" "[nvim] configuring..."
-cp ../config/nvim/ "$HOME/.config/"
+cp "$DOTFILES"/config/nvim/ "$HOME/.config/"
 
 printf "$INFO\n" "[bat] configuring..."
-cp ../config/bat/ "$HOME/.config/"
+cp "$DOTFILES"/config/bat/ "$HOME/.config/"
 bat cache --build
 
 

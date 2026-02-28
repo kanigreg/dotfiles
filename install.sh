@@ -10,8 +10,8 @@ export DEBUG=$'\033[90m%s\033[0m'
 
 export DOTFILES="$HOME/.local/share/dotfiles"
 
-source ./install/base.sh
-source ./install/configs.sh
+source "$DOTFILES"/install/base.sh
+source "$DOTFILES"/install/configs.sh
 
 printf "$SUCCESS\n" "Done"
 printf "$WARN\n" "Reboot required"
