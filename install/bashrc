@@ -22,8 +22,8 @@ if [[ ! -v BASH_COMPLETION_VERSINFO && -f /usr/share/bash-completion/bash_comple
   source /usr/share/bash-completion/bash_completion
 fi
 
-alias ls='ls --color==auto'
-alias grep='grep --color==auto'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 # tmux
 if command -v tmuxinator &> /dev/null; then
