@@ -1,6 +1,8 @@
 #!/bin/bash
 
 if command -v paru &> /dev/null; then
+  printf "\n$INFO\n" "[paru] already installed. Skiped"
+else
   printf "\n$INFO\n" "[paru] installing..."
   sudo pacman -S --needed --noconfirm base-devel
   rm -fr /tmp/paru
@@ -10,8 +12,6 @@ if command -v paru &> /dev/null; then
   printf "$INFO\n" "[paru] building..."
   makepkg -si --needed --noconfirm
   cd $DOTFILES
-else
-  printf "\n$INFO\n" "[paru] already installed. Skiped"
 fi
 
 printf "$INFO\n" "packages installing..."
