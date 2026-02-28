@@ -4,4 +4,4 @@ set -eEo pipefail
 
 export DOTFILES="$HOME/.local/share/"
 
-source ./install/
+source ./install/base.sh
