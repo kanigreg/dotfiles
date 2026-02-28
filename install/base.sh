@@ -1,10 +1,10 @@
 #!/bin/bash
 
-sudo pacman -S --needed --noconfirm\
-nvim\
-mise\
-lazygit\
-docker\
+sudo pacman -S --needed --noconfirm \
+nvim \
+mise \
+lazygit \
+docker \
 fzf
 
 printf "$INFO\n" "Configuring nvim..."
