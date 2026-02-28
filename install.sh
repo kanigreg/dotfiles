@@ -2,6 +2,6 @@
 
 set -eEo pipefail
 
-export DOTFILES="$HOME/.local/share/"
+export DOTFILES="$HOME/.local/share/dotfiles"
 
 source ./install/base.sh
