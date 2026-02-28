@@ -6,7 +6,12 @@ sudo mv /tmp/mirrorlist /etc/pacman.d/mirrorlist
 sudo pacman -S --needed --noconfirm base-devel git libsecret
 
 mkdir --parents ~/.local/share/dotfiles/
-git clone -f https://github.com/kanigreg/dotfiles ~/.local/share/dotfiles/
 cd ~/.local/share/dotfiles/
+if [ ! -d ".git" ]; then
+  git clone https://github.com/kanigreg/dotfiles .
+else
+  git fetch
+  git reset --hard origin/main
+fi
 
 source install.sh
