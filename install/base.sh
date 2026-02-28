@@ -24,7 +24,8 @@ fzf \
 bat \
 unzip \
 fd \
-ripgrep
+ripgrep \
+tree-sitter-cli
 
 paru -S --needed --noconfirm git-delta
 
