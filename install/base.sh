@@ -21,7 +21,10 @@ mise \
 lazygit \
 docker \
 fzf \
-bat
+bat \
+unzip \
+fd \
+ripgrep
 
 paru -S --needed --noconfirm git-delta
 
