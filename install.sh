@@ -13,3 +13,4 @@ export DOTFILES="$HOME/.local/share/dotfiles"
 source ./install/base.sh
 
 printf "$SUCCESS\n" "Done"
+printf "$INFO\n" "Reboot required"
