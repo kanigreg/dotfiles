@@ -1,14 +1,18 @@
 #!/bin/bash
 
-printf "\n$INFO\n" "[paru] installing..."
-sudo pacman -S --needed --noconfirm base-devel
-rm -fr /tmp/paru
-git clone https://aur.archlinux.org/paru.git /tmp/paru
-cd /tmp/paru
+if command -v paru &> /dev/null; then
+  printf "\n$INFO\n" "[paru] installing..."
+  sudo pacman -S --needed --noconfirm base-devel
+  rm -fr /tmp/paru
+  git clone https://aur.archlinux.org/paru.git /tmp/paru
+  cd /tmp/paru
 
-printf "$INFO\n" "[paru] building..."
-makepkg -si --needed --noconfirm
-cd $DOTFILES
+  printf "$INFO\n" "[paru] building..."
+  makepkg -si --needed --noconfirm
+  cd $DOTFILES
+else
+  printf "\n$INFO\n" "[paru] already installed. Skiped"
+fi
 
 printf "$INFO\n" "packages installing..."
 sudo pacman -S --needed --noconfirm \
