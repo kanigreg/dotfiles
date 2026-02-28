@@ -7,7 +7,7 @@ git clone https://aur.archlinux.org/paru.git /tmp/paru
 cd /tmp/paru
 
 printf "$INFO\n" "[paru] building..."
-makepkg -si
+makepkg -si --needed --noconfirm
 cd $DOTFILES
 
 printf "$INFO\n" "packages installing..."
