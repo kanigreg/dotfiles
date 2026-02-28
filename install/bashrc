@@ -1,0 +1,53 @@
+# If not running interactively, don't do anything (leave this at the top of this file)
+[[ $- != *i* ]] && return
+
+export DOTFILES="$HOME/.local/share/dotfiles/"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#6C7086,label:#CDD6F4"
+
+# History control
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTSIZE=32768
+HISTFILESIZE="${HISTSIZE}"
+HISTIGNORE="ls*:*secret*:*password*"
+HISTCONTROL=ignoreboth
+
+# Autocompletion
+if [[ ! -v BASH_COMPLETION_VERSINFO && -f /usr/share/bash-completion/bash_completion ]]; then
+  source /usr/share/bash-completion/bash_completion
+fi
+
+# tmux
+if command -v tmuxinator &> /dev/null; then
+  alias tk='tmux kill-server'
+  alias t='tmuxinator'
+  alias ts='tmuxinator start'
+fi
+
+# mise
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+  set +h
+fi
+
+# fzf
+if command -v fzf &> /dev/null; then
+  if [[ -f /usr/share/fzf/completion.bash ]]; then
+    source /usr/share/fzf/completion.bash
+  fi
+  if [[ -f /usr/share/fzf/key-bindings.bash ]]; then
+    source /usr/share/fzf/key-bindings.bash
+  fi
+fi
+
+# k8s
+if command -v kubectl &> /dev/null; then
+  source <(kubectl completion bash)
+  alias k='kubectl'
+  complete -o default -F __start_kubectl k
+fi

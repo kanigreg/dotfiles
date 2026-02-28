@@ -7,14 +7,13 @@ lazygit \
 docker \
 fzf
 
-echo "export DOTFILES=$DOTFILES" >> ~/bashrc
+printf "$DEBUG\n" "Copy $DOTFILES/install/bashrc to $HOME/.bashrc"
+cp "$DOTFILES/install/bashrc" "$HOME/.bashrc"
 
 printf "$INFO\n" "Configuring nvim..."
 mkdir -p ~/.config
-ln -snf "$DOTFILES/config/nvim" ~/.config/nvim
 
 printf "$INFO\n" "Configuring mise..."
-echo 'eval "$(mise activate bash)"' >> ~/.bashrc
 
 printf "$INFO\n" "Configuring docker..."
 sudo systemctl enable docker
