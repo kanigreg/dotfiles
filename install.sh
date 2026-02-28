@@ -11,12 +11,7 @@ export DEBUG=$'\033[90m%s\033[0m'
 export DOTFILES="$HOME/.local/share/dotfiles"
 
 source ./install/base.sh
+source ./install/configs.sh
 
 printf "$SUCCESS\n" "Done"
-printf "$INFO\n" "Reboot required"
-read -r -p "Reboot now? [Y/n] " response
-response=${response,,}
-
-if [[ "$response" =~ ^(yes|y|)$ ]]; then
-  sudo reboot
-fi
+printf "$WARN\n" "Reboot required"
