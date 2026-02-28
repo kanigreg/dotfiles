@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --needed --noconfirm nvim mise
+sudo pacman -S --needed --noconfirm nvim mise lazygit
 
 mkdir ~/.config
 
