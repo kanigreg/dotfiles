@@ -7,6 +7,8 @@ lazygit \
 docker \
 fzf
 
+echo "export DOTFILES=$DOTFILES" >> ~/bashrc
+
 printf "$INFO\n" "Configuring nvim..."
 mkdir -p ~/.config
 ln -snf "$DOTFILES/config/nvim" ~/.config/nvim
