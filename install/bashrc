@@ -32,10 +32,13 @@ if command -v bat &> /dev/null; then
 fi
 
 # tmux
-if command -v tmuxinator &> /dev/null; then
-  alias tk='tmux kill-server'
-  alias t='tmuxinator'
-  alias ts='tmuxinator start'
+if command -v tmux &> /dev/null; then
+  alias ts='tmux new -A -s'
+fi
+
+# starship
+if command -v starship &> /dev/null; then
+  eval "$(starship init bash)"
 fi
 
 # mise

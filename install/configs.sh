@@ -19,6 +19,12 @@ cp -rf "$DOTFILES"/config/delta/ "$HOME/.config/"
 printf "$INFO\n" "[nvim] configuring..."
 cp -rf "$DOTFILES"/config/nvim/ "$HOME/.config/"
 
+printf "$INFO\n" "[tmux] configuring..."
+cp -rf "$DOTFILES"/config/tmux/ "$HOME/.config/"
+if [[ ! -d ~/.config/tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+else
+
 printf "$INFO\n" "[bat] configuring..."
 cp -rf "$DOTFILES"/config/bat/ "$HOME/.config/"
 bat cache --build

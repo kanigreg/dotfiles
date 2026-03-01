@@ -25,7 +25,9 @@ bat \
 unzip \
 fd \
 ripgrep \
-tree-sitter-cli
+tree-sitter-cli \
+tmux \
+starship 
 
 paru -S --needed --noconfirm git-delta
 
